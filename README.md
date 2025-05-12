@@ -73,7 +73,7 @@
 ![alt text](image-36.png)
 
 
-## lab 03 Access and secret access key 
+## lab 04 Access and secret access key 
 
 - IAM => users => name of the user
 ![alt text](image-37.png)
@@ -84,3 +84,14 @@
 ![alt text](image-43.png)
 ![alt text](image-42.png)
 ![alt text](image-44.png)
+
+## lab 05 IAM roles
+
+- create role and select aws service 
+![alt text](image-45.png)
+- choose ec2
+![alt text](image-46.png)
+- choose readonly 
+![alt text](image-47.png)
+![alt text](image-48.png)
+![alt text](image-49.png)
