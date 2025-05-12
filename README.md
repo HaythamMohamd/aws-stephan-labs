@@ -247,3 +247,37 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 ![alt text](image-124.png)
 - you can recover it 
 ![alt text](image-125.png)
+
+## lab 15 AMI
+
+- create ec2 with this script
+```bash
+#!/bin/bash
+# Use this for your user data (script from top to bottom)
+# install httpd (Linux 2 version)
+yum update -y
+yum install -y httpd
+systemctl start httpd
+systemctl enable httpd
+echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
+```
+![alt text](image-126.png)
+- create an image from ec2
+![alt text](image-127.png)
+![alt text](image-128.png)
+![alt text](image-129.png)
+- from here you will find AMIs
+![alt text](image-130.png)
+- create ec2 from this AMI
+![alt text](image-131.png)
+- put this script
+```bash
+#!/bin/bash
+# Use this for your user data (script from top to bottom)
+# install httpd (Linux 2 version)
+
+echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
+```
+![alt text](image-132.png)
+- test it
+![alt text](image-133.png)
