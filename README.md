@@ -152,3 +152,12 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 - configure the inbound 
 ![alt text](image-73.png)
 
+## lab 09 ec2 with role
+![alt text](image-74.png)
+![alt text](image-75.png)
+![alt text](image-76.png)
+![alt text](image-77.png)
+![alt text](image-78.png)
+![alt text](image-79.png)
+![alt text](image-80.png)
+![alt text](image-81.png)
