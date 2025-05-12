@@ -122,3 +122,27 @@
 - create budget 
 ![alt text](image-62.png)
 ![alt text](image-63.png)
+
+## lab 07 launch ec2 linux
+
+- create ec2
+![alt text](image-64.png)
+- choose linux
+![alt text](image-65.png)
+![alt text](image-66.png)
+![alt text](image-67.png)
+![alt text](image-68.png)
+```bash
+#!/bin/bash
+# Use this for your user data (script from top to bottom)
+# install httpd (Linux 2 version)
+yum update -y
+yum install -y httpd
+systemctl start httpd
+systemctl enable httpd
+echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
+```
+![alt text](image-69.png)
+![alt text](image-71.png)
+
+![alt text](image-72.png)
