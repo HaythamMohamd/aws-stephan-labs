@@ -85,7 +85,7 @@
 ![alt text](image-42.png)
 ![alt text](image-44.png)
 
-## lab 05 IAM roles
+## lab 05 IAM roles and attach it to ec2
 
 - create role and select aws service 
 ![alt text](image-45.png)
@@ -109,3 +109,16 @@
 ![alt text](image-51.png)
 - IAM => user => access advisor
 ![alt text](image-52.png)
+
+## lab 06 billing and cost management and budget 
+
+- from billing and cost managment => cost explorer
+![alt text](image-56.png)
+- to can see bills you should make it from root account then activate IAM acess to make normal users see bills 
+![alt text](image-58.png)
+![alt text](image-59.png)
+![alt text](image-60.png)
+![alt text](image-61.png)
+- create budget 
+![alt text](image-62.png)
+![alt text](image-63.png)
