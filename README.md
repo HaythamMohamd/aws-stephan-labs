@@ -161,3 +161,9 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 ![alt text](image-79.png)
 ![alt text](image-80.png)
 ![alt text](image-81.png)
+
+## lab 10 ec2 launch types
+
+![alt text](image-82.png)
+![alt text](image-83.png)
+![alt text](image-84.png)
