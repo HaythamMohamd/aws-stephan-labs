@@ -248,7 +248,7 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 - you can recover it 
 ![alt text](image-125.png)
 
-## lab 15 AMI
+## lab 16 AMI
 
 - create ec2 with this script
 ```bash
@@ -281,3 +281,15 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 ![alt text](image-132.png)
 - test it
 ![alt text](image-133.png)
+
+## lab 17 EBS encryption 
+
+![alt text](image-134.png)
+![alt text](image-135.png)
+![alt text](image-136.png)
+![alt text](image-137.png)
+![alt text](image-138.png)
+![alt text](image-139.png)
+![alt text](image-140.png)
+![alt text](image-141.png)
+![alt text](image-142.png)
