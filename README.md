@@ -146,3 +146,9 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 ![alt text](image-71.png)
 
 ![alt text](image-72.png)
+
+## lab 08 security group
+
+- configure the inbound 
+![alt text](image-73.png)
+
