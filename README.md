@@ -20,3 +20,42 @@
 ![alt text](image-8.png)
 
 
+## lab 02 IAM policies
+
+- the left pic is root account and right pic is user that you ceated
+![alt text](image-9.png)
+- if you delete the permissions
+![alt text](image-10.png)
+- to add permission
+![alt text](image-11.png)
+- add read only access
+![alt text](image-12.png)
+![alt text](image-13.png)
+- here you just read only
+![alt text](image-14.png)
+- if you try to creat any thing you will got this error
+![alt text](image-15.png)
+- create a group name developers
+![alt text](image-16.png)
+- add the user stephan to it
+![alt text](image-17.png)
+- to create a policy
+![alt text](image-18.png)
+- press to this policy
+![alt text](image-19.png)
+- this mean that allow any action to any resource
+![alt text](image-20.png)
+- this is another one
+![alt text](image-21.png)
+- to create your own policy
+![alt text](image-22.png)
+- you can create it as json or visual
+![alt text](image-23.png)
+- this visual
+![alt text](image-24.png)
+![alt text](image-25.png)
+![alt text](image-26.png)
+![alt text](image-27.png)
+![alt text](image-28.png)
+- this is the output for the created policy
+![alt text](image-29.png)
