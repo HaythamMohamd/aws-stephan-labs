@@ -293,3 +293,26 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 ![alt text](image-140.png)
 ![alt text](image-141.png)
 ![alt text](image-142.png)
+
+## lab 18 EFS
+
+- create EFS
+![alt text](image-143.png)
+- customize it 
+![alt text](image-144.png)
+- choose lifecycle managment
+![alt text](image-145.png)
+- choose performance setting
+![alt text](image-146.png)
+![alt text](image-147.png)
+- network setting 
+![alt text](image-148.png)
+![alt text](image-149.png)
+![alt text](image-150.png)
+- create ec2 and when creating choose the EFS 
+![alt text](image-151.png)
+- create another ec2 in other az
+![alt text](image-152.png)
+- login to each ec2  and mount the efs 
+![alt text](image-153.png)
+![alt text](image-154.png)
