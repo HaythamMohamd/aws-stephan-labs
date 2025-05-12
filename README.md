@@ -177,3 +177,9 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 ![alt text](image-89.png)
 ![alt text](image-90.png)
 ![alt text](image-91.png)
+
+## lab 12 placement group
+- create two ec2s
+![alt text](image-92.png)
+- network interfaces for both
+![alt text](image-93.png)
