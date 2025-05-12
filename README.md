@@ -183,3 +183,12 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 ![alt text](image-92.png)
 - network interfaces for both
 ![alt text](image-93.png)
+
+## lab 13 Hibernate 
+
+- only these tupes support hibernate
+![alt text](image-96.png)
+- when creating ec2 choose this
+![alt text](image-94.png)
+- here to hibernate instance
+![alt text](image-95.png)
