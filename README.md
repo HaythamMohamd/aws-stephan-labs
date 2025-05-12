@@ -218,3 +218,32 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 ![alt text](image-108.png)
 - when delete the ec2 , the main one is checked on delete on termination
 ![alt text](image-109.png)
+
+## lab 15 EBS snapshots
+
+- to creat snapshot from EBS , select it and create snapshot
+![alt text](image-110.png)
+![alt text](image-111.png)
+- here the created snapshot
+![alt text](image-112.png)
+- you copy this snapshot to other region and then create ebs from this snapshot
+![alt text](image-113.png)
+![alt text](image-114.png)
+- here you can create ebs from snpshot 
+![alt text](image-115.png)
+- here you can move it to other az 
+![alt text](image-116.png)
+![alt text](image-117.png)
+- here the recycle bin 
+![alt text](image-118.png)
+- create retention role and this mean how much time should be kept before permenant deletion 
+![alt text](image-119.png)
+![alt text](image-120.png)
+![alt text](image-121.png)
+![alt text](image-122.png)
+- tried to delete the snapshot
+![alt text](image-123.png)
+- will appear at the recycle bin
+![alt text](image-124.png)
+- you can recover it 
+![alt text](image-125.png)
