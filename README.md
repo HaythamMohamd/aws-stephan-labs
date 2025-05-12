@@ -59,3 +59,15 @@
 ![alt text](image-28.png)
 - this is the output for the created policy
 ![alt text](image-29.png)
+
+## lab 03 MFA
+
+- if you want to change password policy
+![alt text](image-30.png)
+![alt text](image-31.png)
+- to enable MFA
+![alt text](image-32.png)
+![alt text](image-33.png)
+![alt text](image-34.png)
+![alt text](image-35.png)
+![alt text](image-36.png)
