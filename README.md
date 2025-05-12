@@ -95,3 +95,17 @@
 ![alt text](image-47.png)
 ![alt text](image-48.png)
 ![alt text](image-49.png)
+- to use the role create ec2 first
+![alt text](image-53.png)
+- attach the role to ec2
+![alt text](image-54.png)
+- test it by using aws iam lust-uers
+![alt text](image-55.png)
+
+## lab 05 IAM Security tools (credential report and access advisor)
+
+- IAM => credential report
+![alt text](image-50.png)
+![alt text](image-51.png)
+- IAM => user => access advisor
+![alt text](image-52.png)
