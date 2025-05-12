@@ -184,7 +184,7 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 - network interfaces for both
 ![alt text](image-93.png)
 
-## lab 13 Hibernate 
+## lab 13 ec2 Hibernate 
 
 - only these tupes support hibernate
 ![alt text](image-96.png)
@@ -192,3 +192,29 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 ![alt text](image-94.png)
 - here to hibernate instance
 ![alt text](image-95.png)
+
+## lab 14 EBS creation and attachment 
+
+- note that the ec2 and ebs should be in same az
+- here the eb2 which is attached to ec2
+![alt text](image-97.png)
+![alt text](image-98.png)
+- create another ebs
+![alt text](image-99.png)
+- create it in another zone
+![alt text](image-100.png)
+![alt text](image-101.png)
+- note it is available
+![alt text](image-102.png)
+- to attach it 
+![alt text](image-103.png)
+![alt text](image-104.png)
+- note the instance has two ebs
+![alt text](image-105.png)
+- create third volume in another zone
+![alt text](image-106.png)
+![alt text](image-107.png)
+- tried to attach but there is no ec2 in this zone
+![alt text](image-108.png)
+- when delete the ec2 , the main one is checked on delete on termination
+![alt text](image-109.png)
