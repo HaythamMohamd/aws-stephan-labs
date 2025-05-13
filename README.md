@@ -487,3 +487,39 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 ![alt text](image-232.png)
 - you can check the history
 ![alt text](image-233.png)
+
+
+## lab 26 Auto scaling - scaling policies
+
+- here the types of scaling policies
+![alt text](image-234.png)
+- here the forecast 
+![alt text](image-235.png)
+![alt text](image-236.png)
+- here is the dynamic scaling policies
+![alt text](image-237.png)
+- here the simple scaling 
+![alt text](image-238.png)
+- here step scaling
+![alt text](image-239.png)
+- here target tracking scaling
+![alt text](image-240.png)
+- he created this
+![alt text](image-241.png)
+- changed this 
+![alt text](image-242.png)
+![alt text](image-243.png)
+- tried to use stress utility to make cpu high 
+![alt text](image-244.png)
+- installed stress 
+![alt text](image-245.png)
+- execute stress command
+![alt text](image-246.png)
+- you can monitor ec2 
+![alt text](image-247.png)
+- here from history if cpu is high will send to cloud watch then auto scalling create another ec2 
+![alt text](image-248.png)
+- hera anothe ec2 is created
+![alt text](image-249.png)
+- if you go to cloud watch you will find two alarms
+![alt text](image-250.png)
