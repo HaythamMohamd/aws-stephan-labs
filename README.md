@@ -730,7 +730,7 @@ echo "<h1>Hello world from $(hostname -f) in AZ $EC2_AVAIL_ZONE </h1>" > /var/ww
 - the result depend on least latency
 ![alt text](image-353.png)
 
-## lab 30 Route 53 health check
+## lab 30 Route 53 health check , failover , geolocation and multi value 
 
 - create health check for every region , here for us-east-1
 ![alt text](image-354.png)
@@ -755,3 +755,19 @@ echo "<h1>Hello world from $(hostname -f) in AZ $EC2_AVAIL_ZONE </h1>" > /var/ww
 ![alt text](image-367.png)
 ![alt text](image-368.png)
 ![alt text](image-369.png)
+- for routing policy failover active passive 
+![alt text](image-370.png)
+![alt text](image-371.png)
+![alt text](image-372.png)
+- for for routing policy geolocation 
+![alt text](image-374.png)
+![alt text](image-373.png)
+![alt text](image-375.png)
+![alt text](image-376.png)
+- for for multi value 
+![alt text](image-377.png) 
+![alt text](image-378.png)
+![alt text](image-379.png)
+![alt text](image-380.png)
+- if you made any of them unhealthy you will see the other two
+![alt text](image-381.png)
