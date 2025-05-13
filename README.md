@@ -418,3 +418,19 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 ![alt text](image-204.png)
 - this at the level of target group
 ![alt text](image-205.png)
+
+## lab 24 elastic load balancer with ssl certificate
+
+- here a network and app load balancer
+![alt text](image-206.png)
+- from app lb will create a listener
+![alt text](image-207.png)
+- the protocol will be 433
+![alt text](image-208.png)
+- forward traffic to new target group
+![alt text](image-209.png)
+- chooose security policy
+![alt text](image-210.png)
+- here the certificate 
+![alt text](image-211.png)
+- the same steps he did them at the network lb
