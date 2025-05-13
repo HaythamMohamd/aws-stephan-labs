@@ -631,3 +631,101 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 ![alt text](image-308.png)
 - here the nodes of redis
 ![alt text](image-309.png)
+
+## lab 29 Route 53 
+
+- Note: no need to do this lab , just understand it as you will pay 13 $
+![alt text](image-310.png)
+- choose a domain not used before
+![alt text](image-311.png)
+![alt text](image-312.png)
+- if enabled this you will not receive spam
+![alt text](image-313.png)
+![alt text](image-314.png)
+- after creation should be like this
+![alt text](image-315.png)
+- create our first record 
+![alt text](image-316.png)
+- created a record with name test and value any thing 
+![alt text](image-317.png)
+- here after creation 
+![alt text](image-318.png)
+- to test it using nslookup
+![alt text](image-319.png)
+- here from dig
+![alt text](image-320.png)
+- he will ceate three EC2s in three diffrent regions and use this script
+```bash
+#!/bin/bash
+yum update -y
+yum install -y httpd
+systemctl start httpd
+systemctl enable httpd
+# updated script to make it work with Amazon Linux 2023
+CHECK_IMDSV1_ENABLED=$(curl -s -o /dev/null -w "%{http_code}" http://169.254.169.254/latest/meta-data/)
+if [[ "$CHECK_IMDSV1_ENABLED" -eq 200 ]]
+then
+    EC2_AVAIL_ZONE="$(curl -s http://169.254.169.254/latest/meta-data/placement/availability-zone)"
+else
+    EC2_AVAIL_ZONE="$(TOKEN=`curl -s -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600"` && curl -s -H "X-aws-ec2-metadata-token: $TOKEN" http://169.254.169.254/latest/meta-data/placement/availability-zone)"
+fi
+echo "<h1>Hello world from $(hostname -f) in AZ $EC2_AVAIL_ZONE </h1>" > /var/www/html/index.html
+```
+![alt text](image-321.png)
+- here the three ec2 in different regions
+![alt text](image-322.png)
+- create a load balancer in frankfurt region
+![alt text](image-323.png)
+- choose all zones and select sec group
+![alt text](image-324.png)
+- create a target group
+![alt text](image-325.png)
+![alt text](image-326.png)
+- here the load balancer
+![alt text](image-327.png)
+- get all the ips for the three ec2 and dns for elb
+![alt text](image-328.png)
+- to check TTL , create a record with 2 mins
+![alt text](image-329.png)
+![alt text](image-330.png)
+- from dig tool you will see the ttl time
+![alt text](image-331.png)
+- if you changed the ip before the 2 mins finished you will see the old value
+![alt text](image-332.png)
+- after the 2 mins finished you will see the new value
+![alt text](image-333.png)
+- here create a record for CNAME and maped it to the load balancer 
+![alt text](image-334.png)
+- here it is worked iwth myapp.stephaneteacher.com
+![alt text](image-335.png)
+- here if you use the alias and for your info the alias is for free
+![alt text](image-336.png)
+- here to test alais
+![alt text](image-337.png)
+- Note: if you want to do this with CNAME will got error and the solution to use alias
+![alt text](image-338.png)
+![alt text](image-339.png)
+- here worked with alias
+![alt text](image-340.png)
+- here the routing policies ( simple, weighted, failover, latency based, geolocation, multi-value answer ,geoproximity)
+- here the simple policy type and means that it will route the traffic to a single resource 
+![alt text](image-341.png)
+![alt text](image-342.png)
+- if you put more than one ip
+![alt text](image-343.png)
+![alt text](image-344.png)
+- here the weighted policy type, for example 10% of traffic will go to southeast
+![alt text](image-345.png)
+- and 70% of traffic will go to US east
+![alt text](image-346.png)
+- and 20% of traffic will go to EU
+![alt text](image-347.png)
+- here after creatiion 
+![alt text](image-348.png)
+- here the latency based type
+![alt text](image-349.png)
+![alt text](image-350.png)
+![alt text](image-351.png)
+![alt text](image-352.png)
+- the result depend on least latency
+![alt text](image-353.png)
