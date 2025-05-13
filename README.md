@@ -396,3 +396,12 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 ![alt text](image-195.png)
 - worked here
 ![alt text](image-196.png)
+
+## lab 22 sticky session 
+
+- from target group 
+![alt text](image-197.png)
+![alt text](image-198.png)
+![alt text](image-199.png)
+- to know details about it
+![alt text](image-200.png)
