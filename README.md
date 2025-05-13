@@ -523,3 +523,58 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 ![alt text](image-249.png)
 - if you go to cloud watch you will find two alarms
 ![alt text](image-250.png)
+
+
+## lab 27 RDS
+
+- create rds 
+![alt text](image-251.png)
+- choose standard or easy create
+![alt text](image-252.png)
+- create mysql
+![alt text](image-253.png)
+- chooose production to see all settings
+![alt text](image-254.png)
+- here choose single instance
+![alt text](image-255.png)
+- put username and password
+![alt text](image-256.png)
+- if free tier choose the least one
+![alt text](image-257.png)
+- her as free tier choose gp2 and if you will work in prod choose gp2 
+![alt text](image-258.png)
+- here if you want to enable auto scaling
+![alt text](image-259.png)
+- here the conectivity between db and ec2 
+![alt text](image-260.png)
+- here if you want to enable public access
+![alt text](image-261.png)
+- create sec group
+![alt text](image-262.png)
+- from here db authentication
+![alt text](image-263.png)
+- here if you want to enable monitor
+![alt text](image-264.png)
+- put a name for db 
+![alt text](image-265.png)
+- enbale auto bkp for 7 days 
+![alt text](image-266.png)
+![alt text](image-267.png)
+- download sqlectron program
+![alt text](image-268.png)
+![alt text](image-269.png)
+![alt text](image-270.png)
+- anfter creation rds copy the endpoint 
+![alt text](image-271.png)
+- open the app 
+![alt text](image-272.png)
+- from here create table 
+![alt text](image-273.png)
+- insert some values
+![alt text](image-274.png)
+- to create a read replica
+![alt text](image-275.png)
+- from here to monitor
+![alt text](image-276.png)
+- if you want to delete you should un check this 
+![alt text](image-277.png)
