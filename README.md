@@ -367,3 +367,32 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 ![alt text](image-180.png)
 - to test the error
 ![alt text](image-181.png)
+
+## lab 20 network load balancer
+
+- create network lb
+![alt text](image-182.png)
+- create name for it
+![alt text](image-183.png)
+- choose all az and creat a security group for it
+![alt text](image-184.png)
+- create a target group
+![alt text](image-185.png)
+- at health check chooose http 
+![alt text](image-186.png)
+- choose health check parameters
+![alt text](image-187.png)
+- choose the EC2s to be part of target group
+![alt text](image-188.png)
+![alt text](image-189.png)
+![alt text](image-190.png)
+![alt text](image-191.png)
+- note it didn't work as the ec2 are unhealthy
+![alt text](image-192.png)
+- solution: add a security group rule to allow ec2 
+![alt text](image-193.png)
+![alt text](image-194.png)
+- after adding sec group rule , the EC2s are healty
+![alt text](image-195.png)
+- worked here
+![alt text](image-196.png)
