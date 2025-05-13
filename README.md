@@ -368,7 +368,7 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 - to test the error
 ![alt text](image-181.png)
 
-## lab 20 network load balancer
+## lab 21 network load balancer
 
 - create network lb
 ![alt text](image-182.png)
