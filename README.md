@@ -434,3 +434,56 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 - here the certificate 
 ![alt text](image-211.png)
 - the same steps he did them at the network lb
+
+## lab 25 Auto scaling 
+
+- create auto scaling group
+![alt text](image-212.png)
+- put a name and create the launch template
+![alt text](image-213.png)
+- put a name for launch template
+![alt text](image-214.png)
+- choose the image
+![alt text](image-215.png)
+- type of ec2
+![alt text](image-216.png)
+- key pair 
+![alt text](image-217.png)
+- sec group
+![alt text](image-218.png)
+- user data
+```bash
+#!/bin/bash
+# Use this for your user data (script from top to bottom)
+# install httpd (Linux 2 version)
+yum update -y
+yum install -y httpd
+systemctl start httpd
+systemctl enable httpd
+echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
+```
+![alt text](image-219.png)
+![alt text](image-220.png)
+- go back to the auto scaling
+![alt text](image-221.png)
+- at the network chooose the VPC
+![alt text](image-222.png)
+- from here if you want to override the launch template
+![alt text](image-223.png)
+- here attach the auto scaling with en exsiting load balancer
+![alt text](image-224.png)
+![alt text](image-225.png)
+- here it is created 
+![alt text](image-226.png)
+- this is the created ec2 from auto scaling
+![alt text](image-228.png)
+- here the history 
+![alt text](image-229.png)
+- if you go to target group you will find that ec2 is healty
+![alt text](image-230.png)
+- tested it
+![alt text](image-231.png)
+- from here if you want to edit the desired, min and max
+![alt text](image-232.png)
+- you can check the history
+![alt text](image-233.png)
