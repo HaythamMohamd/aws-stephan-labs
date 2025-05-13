@@ -316,3 +316,54 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 - login to each ec2  and mount the efs 
 ![alt text](image-153.png)
 ![alt text](image-154.png)
+
+## lab 19 App load balancer part 01
+
+- creat 2 EC2s with this script
+![alt text](image-155.png)
+- create app load balancer
+![alt text](image-156.png)
+![alt text](image-157.png)
+- name of load balancer
+![alt text](image-158.png)
+- choose three zones
+![alt text](image-159.png)
+- create a sec group for load balancer
+![alt text](image-160.png)
+- creat inbound rule and means that any one can reach the load balancer
+![alt text](image-161.png)
+![alt text](image-162.png)
+- choose the sec group
+![alt text](image-163.png)
+- create a target group
+![alt text](image-164.png)
+![alt text](image-165.png)
+- name of target group and which protocol the EC2s are listening on 
+![alt text](image-166.png)
+- choose which EC2s to be member in target group
+![alt text](image-167.png)
+![alt text](image-168.png)
+- create listener and choose which target group
+![alt text](image-169.png)
+![alt text](image-170.png)
+- open with dns name
+![alt text](image-171.png)
+![alt text](image-172.png)
+
+## lab 20 App load balancer part 02
+
+- I need the load balancer only to access the ec2 so with create inbound role and choose the lb sec group 
+![alt text](image-174.png)
+![alt text](image-173.png)
+- create a listener rule
+![alt text](image-175.png)
+![alt text](image-176.png)
+- here the rules conditions
+![alt text](image-177.png)
+- for example here the path for error
+![alt text](image-178.png)
+![alt text](image-179.png)
+- from here choose the pariority
+![alt text](image-180.png)
+- to test the error
+![alt text](image-181.png)
