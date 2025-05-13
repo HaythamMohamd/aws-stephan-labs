@@ -729,3 +729,29 @@ echo "<h1>Hello world from $(hostname -f) in AZ $EC2_AVAIL_ZONE </h1>" > /var/ww
 ![alt text](image-352.png)
 - the result depend on least latency
 ![alt text](image-353.png)
+
+## lab 30 Route 53 health check
+
+- create health check for every region , here for us-east-1
+![alt text](image-354.png)
+![alt text](image-355.png)
+![alt text](image-356.png)
+![alt text](image-357.png)
+![alt text](image-358.png)
+- here for ap-southeast-1
+![alt text](image-359.png)
+- here for eu-central-1
+![alt text](image-360.png)
+![alt text](image-361.png)
+- here the three created ones
+![alt text](image-362.png)
+- to let the security group fail, he will delete this from security group
+![alt text](image-363.png)
+![alt text](image-364.png)
+- here you will see that it is unhealthy
+![alt text](image-365.png)
+- will create calculted health check 
+![alt text](image-366.png)
+![alt text](image-367.png)
+![alt text](image-368.png)
+![alt text](image-369.png)
