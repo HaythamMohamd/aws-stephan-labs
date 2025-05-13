@@ -610,3 +610,24 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 ![alt text](image-294.png)
 ![alt text](image-295.png)
 ![alt text](image-296.png)
+
+## lab 28 ElasticCache (Redis and Memcached)
+
+- Note: elasticache needs a big change in the code 
+![alt text](image-297.png)
+![alt text](image-298.png)
+- choose cluser cache to see all settings
+![alt text](image-299.png)
+![alt text](image-300.png)
+![alt text](image-301.png)
+![alt text](image-302.png)
+![alt text](image-303.png)
+![alt text](image-304.png)
+![alt text](image-305.png)
+![alt text](image-306.png)
+- here after creation
+![alt text](image-307.png)
+- at the code of developer use this endpoint
+![alt text](image-308.png)
+- here the nodes of redis
+![alt text](image-309.png)
