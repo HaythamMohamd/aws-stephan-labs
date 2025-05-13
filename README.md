@@ -578,3 +578,35 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 ![alt text](image-276.png)
 - if you want to delete you should un check this 
 ![alt text](image-277.png)
+
+## lab 27 Aurora 
+
+
+- create db
+![alt text](image-278.png)
+![alt text](image-279.png)
+- choose features
+![alt text](image-280.png)
+- db name
+![alt text](image-281.png)
+- choose aurora standard
+![alt text](image-282.png)
+- instance config
+![alt text](image-283.png)
+![alt text](image-284.png)
+![alt text](image-285.png)
+![alt text](image-286.png)
+![alt text](image-287.png)
+![alt text](image-288.png)
+![alt text](image-289.png)
+![alt text](image-290.png)
+- it should be like this after creation 
+![alt text](image-291.png)
+- here reader and writer endpoint 
+![alt text](image-292.png)
+- here all the options 
+![alt text](image-293.png)
+- from here to create a read replica
+![alt text](image-294.png)
+![alt text](image-295.png)
+![alt text](image-296.png)
