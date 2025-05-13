@@ -405,3 +405,16 @@ echo "<h1>Hello World from $(hostname -f)</h1>" > /var/www/html/index.html
 ![alt text](image-199.png)
 - to know details about it
 ![alt text](image-200.png)
+
+## lab 23 cross zone load balancing
+
+- here the three types of load balancer
+![alt text](image-201.png)
+- at network lb is disabled by default and if you enable it you will pay 
+![alt text](image-202.png)
+- the same at GLB
+![alt text](image-203.png)
+- but the app lb os enabled by default
+![alt text](image-204.png)
+- this at the level of target group
+![alt text](image-205.png)
