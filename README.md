@@ -849,3 +849,20 @@ echo "<h1>Hello world from $(hostname -f) in AZ $EC2_AVAIL_ZONE </h1>" > /var/ww
 - if you opened the link again it will work
 ![alt text](image-424.png)
 
+## lab 34 S3 static website
+
+- here th idea of static website 
+![alt text](image-425.png)
+- upload these files
+![alt text](image-426.png)
+- go to properities then static web site edit the enable it
+![alt text](image-428.png)
+- put index.html
+![alt text](image-429.png)
+![alt text](image-430.png)
+- upload index.html
+![alt text](image-431.png)
+- open from this url
+![alt text](image-432.png)
+- worked
+![alt text](image-433.png)
