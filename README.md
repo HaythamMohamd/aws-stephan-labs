@@ -800,3 +800,52 @@ echo "<h1>Hello world from $(hostname -f) in AZ $EC2_AVAIL_ZONE </h1>" > /var/ww
 - to access it 
 ![alt text](image-398.png)
 ![alt text](image-399.png)
+
+
+## lab 32 S3 creation and upload file
+
+- create bucket
+![alt text](image-400.png)
+- choose name of the bucket and region
+![alt text](image-401.png)
+- recommended to keep acls disabled
+![alt text](image-402.png)
+- here bloc pulbic access 
+![alt text](image-403.png)
+![alt text](image-404.png)
+- upload this image
+![alt text](image-405.png)
+- if you open the file from here it will be opened as he encoded credentials
+![alt text](image-406.png)
+- if you opend from the url will not open as you already disable pulbic access
+![alt text](image-407.png)
+- create imges folder
+![alt text](image-408.png)
+![alt text](image-409.png)
+- upload this file inside it
+![alt text](image-410.png)
+
+## lab 33 S3 bucket policy 
+
+![alt text](image-411.png)
+![alt text](image-412.png)
+![alt text](image-413.png)
+![alt text](image-414.png)
+![alt text](image-415.png)
+- go to permission from s3 
+![alt text](image-416.png)
+- open the public access
+![alt text](image-417.png)
+![alt text](image-418.png)
+- edit
+![alt text](image-419.png)
+- to creat a policy from polic generator
+![alt text](image-420.png)
+- choose effect , principle , aws service and the arn of s3 end with *
+![alt text](image-421.png)
+- this is the output , copy it and put it at the policy 
+![alt text](image-422.png)
+![alt text](image-423.png)
+- if you opened the link again it will work
+![alt text](image-424.png)
+
