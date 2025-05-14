@@ -938,3 +938,17 @@ echo "<h1>Hello world from $(hostname -f) in AZ $EC2_AVAIL_ZONE </h1>" > /var/ww
 ![alt text](image-470.png)
 ![alt text](image-471.png)
 ![alt text](image-472.png)
+
+## lab 38 S3 life cycle rules  
+
+- ceate rule 
+![alt text](image-473.png)
+![alt text](image-474.png)
+![alt text](image-475.png)
+![alt text](image-476.png)
+- this is for transition
+![alt text](image-477.png)
+- this is for  expire 
+![alt text](image-478.png)
+- ths after creation
+![alt text](image-479.png)
