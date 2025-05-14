@@ -771,3 +771,32 @@ echo "<h1>Hello world from $(hostname -f) in AZ $EC2_AVAIL_ZONE </h1>" > /var/ww
 ![alt text](image-380.png)
 - if you made any of them unhealthy you will see the other two
 ![alt text](image-381.png)
+
+## lab 31 Elastic Beanstalk
+
+- here the developers interest only at the code and no need for the infra 
+![alt text](image-382.png)
+- so beantstalk is a good choice 
+![alt text](image-383.png)
+- choose the environment and the name
+![alt text](image-384.png)
+![alt text](image-385.png)
+- choose the platform that you want
+![alt text](image-386.png)
+![alt text](image-387.png)
+![alt text](image-388.png)
+- create a role 
+![alt text](image-389.png)
+- from iam create the role 
+![alt text](image-390.png)
+![alt text](image-391.png)
+![alt text](image-392.png)
+![alt text](image-393.png)
+![alt text](image-394.png)
+![alt text](image-395.png)
+- after creation beanstak here the events
+![alt text](image-396.png)
+![alt text](image-397.png)
+- to access it 
+![alt text](image-398.png)
+![alt text](image-399.png)
