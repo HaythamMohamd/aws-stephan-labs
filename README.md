@@ -866,3 +866,22 @@ echo "<h1>Hello world from $(hostname -f) in AZ $EC2_AVAIL_ZONE </h1>" > /var/ww
 ![alt text](image-432.png)
 - worked
 ![alt text](image-433.png)
+
+## lab 35 S3 versioning
+
+- version idea
+![alt text](image-434.png)
+- to enable versioning from propertoies
+![alt text](image-435.png)
+![alt text](image-436.png)
+- edited html file 
+![alt text](image-437.png)
+![alt text](image-438.png)
+- to see versions
+![alt text](image-439.png)
+- if you deleted it 
+![alt text](image-440.png)
+- rolled back to the old one
+![alt text](image-441.png)
+- if you deleted coffe file , will show delete marker for it and you can delete this delete marker to rollback 
+![alt text](image-442.png)
