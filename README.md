@@ -886,7 +886,7 @@ echo "<h1>Hello world from $(hostname -f) in AZ $EC2_AVAIL_ZONE </h1>" > /var/ww
 - if you deleted coffe file , will show delete marker for it and you can delete this delete marker to rollback 
 ![alt text](image-442.png)
 
-## lab 35 S3 replication 
+## lab 36 S3 replication 
 
 - will create a two buckets and enable the versioning
 ![alt text](image-443.png)
@@ -916,3 +916,25 @@ echo "<h1>Hello world from $(hostname -f) in AZ $EC2_AVAIL_ZONE </h1>" > /var/ww
 ![alt text](image-458.png)
 - Note: if you want to replicate delete marker 
 ![alt text](image-459.png)
+
+## lab 37 S3 storage classess 
+
+- idea
+![alt text](image-460.png)
+- create a bucket
+![alt text](image-461.png)
+![alt text](image-462.png)
+- when upload any object you will determie which class
+![alt text](image-463.png)
+- he choose this
+![alt text](image-464.png)
+- you can change from here 
+![alt text](image-465.png)
+- from here to ceate the life cycle rule 
+![alt text](image-466.png)
+![alt text](image-467.png)
+![alt text](image-468.png)
+![alt text](image-469.png)
+![alt text](image-470.png)
+![alt text](image-471.png)
+![alt text](image-472.png)
