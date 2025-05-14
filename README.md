@@ -885,3 +885,34 @@ echo "<h1>Hello world from $(hostname -f) in AZ $EC2_AVAIL_ZONE </h1>" > /var/ww
 ![alt text](image-441.png)
 - if you deleted coffe file , will show delete marker for it and you can delete this delete marker to rollback 
 ![alt text](image-442.png)
+
+## lab 35 S3 replication 
+
+- will create a two buckets and enable the versioning
+![alt text](image-443.png)
+![alt text](image-444.png)
+![alt text](image-445.png)
+- this is the second bucket 
+![alt text](image-446.png)
+![alt text](image-447.png)
+- upload a file in first bucket 
+![alt text](image-448.png)
+- to create a replication rule 
+![alt text](image-449.png)
+![alt text](image-450.png)
+- name of replication and enable it
+![alt text](image-451.png)
+- apply to all bucket
+![alt text](image-452.png)
+- choose the destination to be the second bucket
+![alt text](image-453.png)
+- create a role
+![alt text](image-454.png)
+![alt text](image-455.png)
+![alt text](image-456.png)
+- here upload a file in the first s3
+![alt text](image-457.png)
+- here it appeared at the second one using replication 
+![alt text](image-458.png)
+- Note: if you want to replicate delete marker 
+![alt text](image-459.png)
