@@ -158,6 +158,68 @@
 ![alt text](image-736.png)
 - don't forget to destroy it
 ![alt text](image-737.png)
+
+
+## lab NAT gateway
+
+- idea: the responsability of nat gw is on aws not at you
+![alt text](image-738.png)
+![alt text](image-739.png)
+- for high availability should be in each az you have nat gw
+![alt text](image-740.png)
+- note: once we deleted the NAT insatnce you will find this blackhole 
+![alt text](image-741.png)
+- create NAT gw
+![alt text](image-742.png)
+- the NAT gw should have elastic ip
+![alt text](image-743.png)
+![alt text](image-744.png)
+- edit the routes at the private route table
+![alt text](image-745.png)
+- it should be any traffic will go to the nat gw
+![alt text](image-746.png)
+![alt text](image-747.png)
+- test from private instance and will work
+![alt text](image-748.png)
+
+
+## lab Nacls and sec group
+- idea
+![alt text](image-749.png)
+![alt text](image-750.png)
+- here the default nacls in inbound 
+![alt text](image-751.png)
+- here the default nacls in outbound 
+![alt text](image-752.png)
+- will install apache in bastion host instance
+![alt text](image-753.png)
+![alt text](image-754.png)
+![alt text](image-755.png)
+- at the sec group of bastion host open http for all ips
+![alt text](image-756.png)
+- here it works
+![alt text](image-757.png)
+- if you edited the default nacls and dey the http on port 80 
+![alt text](image-758.png)
+- it will not work, as the request goes firs at the nacl and override the sec group
+![alt text](image-759.png)
+- if you edit the nacls and the number to be 140, this means that tha allow traffic will be the first so it will work
+![alt text](image-760.png)
+![alt text](image-761.png)
+- here worked
+![alt text](image-762.png)
+- if you edited the outbound and deny, so it will not work as you know that the nacls is stateless and this mean you should define each rule at inbound and outbound
+![alt text](image-763.png)
+- here didn't work so he revereted the outbound again to be allow
+![alt text](image-764.png)
+- to test the sec group, here at inbound
+![alt text](image-765.png)
+- for the outbound her removed every thing and it will work as the sec group is statefull and this means if the inboud is ok the outbound will be automaticallu ok
+![alt text](image-766.png)
+- here it worked
+![alt text](image-767.png)
+
+
 ## lab 01 Iam user and groups
 
 - IAM => users
