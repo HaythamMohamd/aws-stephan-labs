@@ -1166,3 +1166,42 @@ aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configur
 ![alt text](image-587.png)
 ![alt text](image-588.png)
 ![alt text](image-589.png)
+
+## lab 46 CloudFront S3 as origin
+
+- idea
+![alt text](image-590.png)
+- s3 as origin
+![alt text](image-591.png)
+- create s3 bucket for cloud front
+![alt text](image-592.png)
+![alt text](image-593.png)
+- uploaded these files
+![alt text](image-594.png)
+- I need access these files by using the cloudfront
+![alt text](image-595.png)
+![alt text](image-596.png)
+- choose the origin to be the s3 bucket 
+![alt text](image-597.png)
+- create control setting 
+![alt text](image-598.png)
+![alt text](image-599.png)
+- here you should create a policy at s3 to enbable the cloudfrot tp access th s3
+![alt text](image-600.png)
+- disable waf
+![alt text](image-601.png)
+- put index.html
+![alt text](image-602.png)
+- take copy 
+![alt text](image-603.png)
+- then go to the s3 to create the policy 
+![alt text](image-604.png)
+![alt text](image-605.png)
+- put what you copied from cloudfront here
+![alt text](image-606.png)
+![alt text](image-607.png)
+- go to cloudfront to access it from this link
+![alt text](image-608.png)
+![alt text](image-609.png)
+![alt text](image-610.png)
+![alt text](image-611.png)
