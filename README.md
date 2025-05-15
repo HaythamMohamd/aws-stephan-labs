@@ -219,6 +219,48 @@
 - here it worked
 ![alt text](image-767.png)
 
+## lab VPC peering
+
+- idea
+![alt text](image-768.png)
+![alt text](image-769.png)
+- will create vpc peering between default and demo vpc
+![alt text](image-770.png)
+- create ec2 in default vpc
+![alt text](image-771.png)
+- notice here the two ec2s have a different ips in defferent networks
+![alt text](image-772.png)
+![alt text](image-773.png)
+- here the bastion host curl his ip is ok
+![alt text](image-774.png)
+- but from the ec2 in default vpc can't ping or curl the ip of bastion host 
+![alt text](image-775.png)
+- solution: create vpc peering between them
+![alt text](image-776.png)
+![alt text](image-777.png)
+- here the both in the same account 
+![alt text](image-778.png)
+- here the other vpc
+![alt text](image-779.png)
+![alt text](image-780.png)
+- note it is pending till the other vpc accept peering 
+![alt text](image-781.png)
+- go to the other vpc and accept peering 
+![alt text](image-782.png)
+![alt text](image-783.png)
+- must configure the route table between them 
+![alt text](image-784.png)
+- go to the public route table 
+![alt text](image-785.png)
+- add the route that if you want to go to 172.31.0.0/16 should be through vpc peering
+![alt text](image-786.png)
+![alt text](image-787.png)
+- do the same for the other vpc route table
+![alt text](image-788.png)
+![alt text](image-789.png)
+- here is worked 
+![alt text](image-790.png)
+
 
 ## lab 01 Iam user and groups
 
