@@ -1133,3 +1133,22 @@ aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configur
 ```
 ![alt text](image-572.png)
 ![alt text](image-573.png)
+
+## lab 44 S3 access logs
+
+- idea
+![alt text](image-574.png)
+- never ever do the logs in the same s3 as this will do a loop
+![alt text](image-575.png)
+
+- create another s3 
+![alt text](image-576.png)
+- from properities enable logs
+![alt text](image-577.png)
+![alt text](image-578.png)
+- will enable and choose which s3 should be the target and store logs in it
+![alt text](image-579.png)
+- if you upload any thing in the original s3 , will see logs in dest s3
+![alt text](image-580.png)
+![alt text](image-581.png)
+
