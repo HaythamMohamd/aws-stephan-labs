@@ -1032,3 +1032,64 @@ echo "<h1>Hello world from $(hostname -f) in AZ $EC2_AVAIL_ZONE </h1>" > /var/ww
 ![alt text](image-522.png)
 - uploaded another file on s3 and you can control encryption options while uploading
 ![alt text](image-523.png)
+
+
+## lab 42 S3 CORS
+
+- Idea if you want to get index.html file from server and the file contains images in another server with different origin, to access it so the other server should accept the cors
+![alt text](image-524.png)
+![alt text](image-525.png)
+- the same idea from the client to access our s3 we should enable CORS headers 
+![alt text](image-526.png)
+- here handson, will test first if the two files in the same origin or same s3 
+![alt text](image-527.png)
+- this is a script will get this extra-page.html 
+![alt text](image-528.png)
+![alt text](image-529.png)
+- he will upload these two files 
+![alt text](image-530.png)
+![alt text](image-531.png)
+- from properties of s3 you open the static link file 
+![alt text](image-532.png)
+- it will work as the two files at the same origin
+![alt text](image-533.png)
+- will test first if the two files in the different origin or same s3, so he will create another s3 in another region
+![alt text](image-534.png)
+![alt text](image-535.png)
+![alt text](image-536.png)
+- will enable static web site
+![alt text](image-537.png)
+![alt text](image-538.png)
+![alt text](image-539.png)
+![alt text](image-540.png)
+![alt text](image-541.png)
+- will make this bucket be public
+![alt text](image-542.png)
+![alt text](image-543.png)
+![alt text](image-544.png)
+![alt text](image-545.png)
+- upload extra-page file
+![alt text](image-546.png)
+![alt text](image-547.png)
+- will delete the file from first s3
+![alt text](image-548.png)
+- if you tried to refresh the page 
+![alt text](image-549.png)
+- solution, we want to get the file from the other s3 , so we need the full path for it 
+![alt text](image-550.png)
+- edit the index.html and put the full path
+![alt text](image-551.png)
+- upload it again to replace the old one
+![alt text](image-552.png)
+- if you refresh and opened f12, will get error because the cors, this mean that the request went to the other bucket but didn't accept the request 
+![alt text](image-553.png)
+- solution : got to the other s3 and enable CORS
+![alt text](image-554.png)
+![alt text](image-555.png)
+- it be like this 
+![alt text](image-556.png)
+- Note: this is the first s3 url should not have a / at the end like this
+![alt text](image-558.png)
+![alt text](image-557.png)
+- try again and will work
+![alt text](image-559.png)
