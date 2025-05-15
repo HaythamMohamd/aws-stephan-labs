@@ -1216,3 +1216,49 @@ aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configur
 ![alt text](image-615.png)
 - it is prefered that the origin be loadbalancer not ec2 as we don't want to make the ec2 public 
 ![alt text](image-614.png)
+
+## lab 48 CloudFront Georestriction 
+
+- to allow or block requests to come from some countries 
+![alt text](image-616.png)
+![alt text](image-617.png)
+
+## lab 49 AWS Global Accelerator , this lab is not free
+
+- idea
+![alt text](image-618.png)
+- defference between cloudfront and aws global accelerator
+![alt text](image-619.png)
+- create ec2 first to run an app in us-east-1a
+![alt text](image-620.png)
+![alt text](image-621.png)
+![alt text](image-622.png)
+- created another ec2 at mumbai
+![alt text](image-623.png)
+- create a global accelerator
+![alt text](image-624.png)
+![alt text](image-625.png)
+- choose port and protocol
+![alt text](image-626.png)
+![alt text](image-627.png)
+- here the health check
+![alt text](image-628.png)
+- added the other for mumbai
+![alt text](image-629.png)
+![alt text](image-630.png)
+- choose the endpoint for each one
+![alt text](image-631.png)
+![alt text](image-632.png)
+- here it is created 
+![alt text](image-633.png)
+- to test it , will redirect you to the nearest one to you
+![alt text](image-634.png)
+- he changed his vpn 
+![alt text](image-635.png)
+![alt text](image-636.png)
+- to test health check he will go to the security group and delete rule
+![alt text](image-637.png)
+![alt text](image-638.png)
+- after some time this will be unhealthy
+![alt text](image-639.png)
+- for clean up terminate each ec2 then disable global accelerator and delete it 
