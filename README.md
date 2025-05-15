@@ -488,6 +488,18 @@ where httpstatus='403';
 - from route table there is aroute is added 
 ![alt text](image-901.png)
 
+## egree-only internet gw
+
+- idea:
+![alt text](image-902.png)
+![alt text](image-903.png)
+- lab, create egress only internet gw
+![alt text](image-904.png)
+![alt text](image-905.png)
+- edit the routes at route table
+![alt text](image-906.png)
+- choose any thing should go to the ingress only internet gw
+![alt text](image-907.png)
 
 
 ## lab 01 Iam user and groups
