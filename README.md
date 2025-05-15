@@ -126,6 +126,38 @@
 - at it is normal that the private ec2 can't access internet and will solve this issue by the nat gw
 ![alt text](image-719.png)
 
+## lab NAT instance
+
+- idea of nat instance, the issue here that you will responsible for all of that and cost more money 
+![alt text](image-720.png)
+![alt text](image-721.png)
+- create ec2 for nat instance 
+![alt text](image-722.png)
+- selected one from market place
+![alt text](image-723.png)
+![alt text](image-724.png)
+- it should be in public subnet 
+![alt text](image-725.png)
+- create a sec group for it and open access from anywhere
+![alt text](image-726.png)
+- also added this
+![alt text](image-727.png)
+![alt text](image-728.png)
+- you must change this and stop source/dest feature to let the ec2 redirect the traffic
+![alt text](image-729.png)
+![alt text](image-730.png)
+- go to the private subnet to edit the routes
+![alt text](image-731.png)
+![alt text](image-732.png)
+- here any traffic should go to the NAT instance 
+![alt text](image-733.png)
+![alt text](image-734.png)
+- confirm at the sec group that the ping is added 
+![alt text](image-735.png)
+- test the internet from private ec2 
+![alt text](image-736.png)
+- don't forget to destroy it
+![alt text](image-737.png)
 ## lab 01 Iam user and groups
 
 - IAM => users
