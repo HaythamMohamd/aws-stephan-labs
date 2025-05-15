@@ -432,19 +432,28 @@ SELECT * FROM "s3_access_logs_db"."mybucket_logs"
 where httpstatus='403';
 ```
 
+## lab site to site vpn 
 
-
-
-
-
-
-
-
-
-
-
-
-
+- idea:
+![alt text](image-869.png)
+![alt text](image-870.png)
+![alt text](image-871.png)
+![alt text](image-872.png)
+- Lab: create customer gw
+![alt text](image-873.png)
+- here the info should be known from onprem
+![alt text](image-874.png)
+- here if there is a cert
+![alt text](image-875.png)
+![alt text](image-876.png)
+- create virtual private gateway
+![alt text](image-877.png)
+![alt text](image-878.png)
+- create vpn connection
+![alt text](image-879.png)
+![alt text](image-880.png)
+![alt text](image-881.png)
+![alt text](image-882.png)
 
 
 
