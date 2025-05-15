@@ -1194,6 +1194,9 @@ aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configur
 ![alt text](image-602.png)
 - take copy 
 ![alt text](image-603.png)
+- you can get it again from here
+![alt text](image-612.png)
+![alt text](image-613.png)
 - then go to the s3 to create the policy 
 ![alt text](image-604.png)
 ![alt text](image-605.png)
@@ -1202,6 +1205,14 @@ aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configur
 ![alt text](image-607.png)
 - go to cloudfront to access it from this link
 ![alt text](image-608.png)
+- if refresh it get it from cache for cloudfront 
 ![alt text](image-609.png)
 ![alt text](image-610.png)
 ![alt text](image-611.png)
+
+## lab 47 CloudFront ALB/EC2 as origin
+
+- idea
+![alt text](image-615.png)
+- it is prefered that the origin be loadbalancer not ec2 as we don't want to make the ec2 public 
+![alt text](image-614.png)
