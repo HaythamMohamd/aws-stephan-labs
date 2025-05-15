@@ -1,5 +1,105 @@
  # AWS-stephan-labs
 
+##  VPC
+
+- here will do all these services 
+![alt text](image-657.png)
+- here is the default vpc
+![alt text](image-658.png)
+- here three subnets in each zone
+![alt text](image-659.png)
+![alt text](image-660.png)
+![alt text](image-661.png)
+![alt text](image-662.png)
+![alt text](image-663.png)
+- here nacls
+![alt text](image-664.png)
+- route table
+![alt text](image-665.png)
+- internet gw
+![alt text](image-666.png)
+- rounte table their is association between subntes
+![alt text](image-667.png)
+
+## lab vpc creation 
+
+- create your vpc
+![alt text](image-668.png)
+
+- choose name and cidr
+![alt text](image-669.png)
+- create a tag
+![alt text](image-670.png)
+- after creation the vpc if you want to add a secondary cidr
+![alt text](image-671.png)
+![alt text](image-672.png)
+
+## lab subnet creation 
+
+- create public anc private vpc
+![alt text](image-673.png)
+- FYI there are 5 IPs are reserved to AWS for each subnet
+![alt text](image-674.png)
+- create subnet 
+![alt text](image-675.png)
+- choose which vpc to you want to create the subnet inside it
+![alt text](image-676.png)
+- create first public subnetA with cidr 10.0.0.0/24
+![alt text](image-677.png)
+- create first public subnetB with cidr 10.0.1.0/24
+![alt text](image-678.png)
+- create first private subnetA with cidr 10.0.16.0/20
+![alt text](image-679.png)
+- create first private subnetB with cidr 10.0.32.0/20
+![alt text](image-681.png)
+![alt text](image-680.png)
+- here the four subnets
+![alt text](image-682.png)
+- you can see the available ips for each subnet
+![alt text](image-683.png)
+
+## lab internet gateway and route table creation 
+
+- the internet gw should be mapped to a vpc
+![alt text](image-684.png)
+- if you try to create an EC2 this by default is disable
+![alt text](image-685.png)
+- so we need to enable it at the public subnets only 
+![alt text](image-686.png)
+![alt text](image-687.png)
+![alt text](image-688.png)
+- the same at the other subnet 
+![alt text](image-689.png)
+- he created an EC2 and to reach internet, must create internet gw
+![alt text](image-690.png)
+- create an internet gw
+![alt text](image-691.png)
+![alt text](image-692.png)
+- attach it to your vpc
+![alt text](image-693.png)
+![alt text](image-694.png)
+- till now will not be able to access internet because there is no route table to point to the internet gw that you created , so create one
+![alt text](image-695.png)
+- will create two routes one for public and the other for private
+![alt text](image-696.png)
+![alt text](image-697.png)
+- go to the public route table to do the subnet association
+![alt text](image-698.png)
+- edit it and choose the public subnets
+![alt text](image-699.png)
+![alt text](image-700.png)
+- do the same with private
+![alt text](image-701.png)
+![alt text](image-702.png)
+![alt text](image-703.png)
+- last step, go to the route table and edit it then add route for any thing go to internet gw
+![alt text](image-704.png)
+![alt text](image-705.png)
+- test from ec2 and it will work
+![alt text](image-706.png)
+
+
+
 ## lab 01 Iam user and groups
 
 - IAM => users
@@ -1299,3 +1399,5 @@ aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configur
 ![alt text](image-654.png)
 ![alt text](image-655.png)
 ![alt text](image-656.png)
+
+
