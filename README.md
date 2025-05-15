@@ -488,7 +488,7 @@ where httpstatus='403';
 - from route table there is aroute is added 
 ![alt text](image-901.png)
 
-## egree-only internet gw
+## lab egree-only internet gw
 
 - idea:
 ![alt text](image-902.png)
@@ -502,6 +502,15 @@ where httpstatus='403';
 ![alt text](image-907.png)
 
 
+## clean up all vpc labs
+
+- stop instances and delete them
+![alt text](image-908.png)
+- delete all of this 
+![alt text](image-909.png)
+- see bills
+![alt text](image-910.png)
+![alt text](image-911.png)
 ## lab 01 Iam user and groups
 
 - IAM => users
