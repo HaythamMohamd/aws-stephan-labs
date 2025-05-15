@@ -261,6 +261,63 @@
 - here is worked 
 ![alt text](image-790.png)
 
+## lab VPC endpoint (gateway and interface)
+
+- idea: need to access dynamo db not from public but from internal 
+![alt text](image-791.png)
+- if you accessed it public from ec2 => nat gw => sns , this will cost money 
+![alt text](image-792.png)
+- here the best option to use vpc endpoint 
+![alt text](image-793.png)
+- we have two types(interface endpoint and gw endpoint)
+![alt text](image-794.png)
+- gateway is prefered 
+![alt text](image-795.png)
+- will delete this instance 
+![alt text](image-796.png)
+- will ssh to bastion instance then to the private instance 
+![alt text](image-797.png)
+![alt text](image-798.png)
+- to access the s3 should create role 
+![alt text](image-799.png)
+![alt text](image-800.png)
+![alt text](image-801.png)
+![alt text](image-802.png)
+![alt text](image-803.png)
+![alt text](image-804.png)
+![alt text](image-805.png)
+![alt text](image-806.png)
+- here it is working
+![alt text](image-807.png)
+- if you deleted the route at the internet gw 
+![alt text](image-808.png)
+![alt text](image-809.png)
+- here it is not working 
+![alt text](image-810.png)
+- the solution: to create endpoint 
+![alt text](image-811.png)
+- here if you want to choose interface endpoint 
+![alt text](image-812.png)
+- choose to which vpc
+![alt text](image-813.png)
+- choose which subnets
+![alt text](image-814.png)
+- choose the sec group 
+![alt text](image-815.png)
+- back to the gateway endpoint 
+![alt text](image-816.png)
+- choose which vpc
+![alt text](image-817.png)
+- update private route table 
+![alt text](image-818.png)
+![alt text](image-819.png)
+![alt text](image-820.png)
+![alt text](image-821.png)
+- if go to the route table for endpoint you will find this route is added automatic
+![alt text](image-822.png)
+- tested again and worked
+![alt text](image-823.png)
+
 
 ## lab 01 Iam user and groups
 
