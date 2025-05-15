@@ -952,3 +952,55 @@ echo "<h1>Hello world from $(hostname -f) in AZ $EC2_AVAIL_ZONE </h1>" > /var/ww
 ![alt text](image-478.png)
 - ths after creation
 ![alt text](image-479.png)
+
+## lab 39 S3 Event notification
+
+- idea
+![alt text](image-480.png)
+![alt text](image-481.png)
+- create bucket
+![alt text](image-482.png)
+![alt text](image-483.png)
+![alt text](image-484.png)
+![alt text](image-485.png)
+- turn on the event bridge feature
+![alt text](image-486.png)
+- create event notification
+![alt text](image-487.png)
+- give it a name 
+![alt text](image-488.png)
+- choose what you need , here all objects create events
+![alt text](image-489.png)
+- here choose sqs
+![alt text](image-490.png)
+- will create a new sqs
+![alt text](image-491.png)
+![alt text](image-492.png)
+![alt text](image-493.png)
+- go back to event notification and choose this
+![alt text](image-494.png)
+- here you will get an error and this is normal as the policy is not set
+![alt text](image-495.png)
+- go to sqs and edit access policy 
+![alt text](image-496.png)
+- from policy generator
+![alt text](image-497.png)
+- choose the sqs type policy, and effect allow,  principle * and action sendMessage
+![alt text](image-498.png)
+- put the arn of s3
+![alt text](image-499.png)
+- copy this
+![alt text](image-500.png)
+- and pu it at access policy then save
+![alt text](image-501.png)
+![alt text](image-502.png)
+- if you go back and save here it will work again
+![alt text](image-503.png)
+![alt text](image-504.png)
+![alt text](image-505.png)
+- here the test message
+![alt text](image-506.png)
+- he uploaded a file at the s3 , you should find a message for it at the sqs
+![alt text](image-507.png)
+![alt text](image-508.png)
+![alt text](image-509.png)
