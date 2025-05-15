@@ -1004,3 +1004,9 @@ echo "<h1>Hello world from $(hostname -f) in AZ $EC2_AVAIL_ZONE </h1>" > /var/ww
 ![alt text](image-507.png)
 ![alt text](image-508.png)
 ![alt text](image-509.png)
+
+## lab 40 S3 Performance
+
+- idea
+![alt text](image-510.png)
+![alt text](image-511.png)
