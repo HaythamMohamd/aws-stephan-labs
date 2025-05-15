@@ -1262,3 +1262,40 @@ aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configur
 - after some time this will be unhealthy
 ![alt text](image-639.png)
 - for clean up terminate each ec2 then disable global accelerator and delete it 
+
+
+## lab 50 Snow family
+
+- idea
+![alt text](image-640.png)
+- from snow family
+![alt text](image-641.png)
+![alt text](image-642.png)
+![alt text](image-643.png)
+![alt text](image-644.png)
+![alt text](image-645.png)
+
+## lab 51 Amazon FSx
+
+- idea of FSx, managed filesystem on aws 
+![alt text](image-646.png)
+![alt text](image-647.png)
+
+## lab 52 Storage gatway (hybrid cloud)
+
+- block, file and object storage 
+![alt text](image-648.png)
+- s3 file gateway
+![alt text](image-649.png)
+- FSx file gateway
+![alt text](image-650.png)
+- volume gw
+![alt text](image-653.png)
+- tape gw
+![alt text](image-651.png)
+- all of them
+![alt text](image-652.png)
+- create from here
+![alt text](image-654.png)
+![alt text](image-655.png)
+![alt text](image-656.png)
