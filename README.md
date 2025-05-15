@@ -318,6 +318,140 @@
 - tested again and worked
 ![alt text](image-823.png)
 
+## lab VPC flow logs and Athena
+
+- idea 
+![alt text](image-824.png)
+![alt text](image-825.png)
+![alt text](image-826.png)
+- demo: from vpc create flow logs
+![alt text](image-827.png)
+- put the name and the filter
+![alt text](image-828.png)
+![alt text](image-829.png)
+- create s3 at the same region of vpc
+![alt text](image-830.png)
+![alt text](image-831.png)
+- take the s3 arn and put here
+![alt text](image-832.png)
+- here the format of logs
+![alt text](image-833.png)
+![alt text](image-834.png)
+![alt text](image-835.png)
+- create another flow logs and send it to cloud watch
+![alt text](image-836.png)
+- we need to create role and log group
+![alt text](image-837.png)
+- create policy
+![alt text](image-838.png)
+![alt text](image-839.png)
+![alt text](image-840.png)
+![alt text](image-841.png)
+![alt text](image-842.png)
+![alt text](image-843.png)
+- go to cloud watch to creat a log group
+![alt text](image-844.png)
+![alt text](image-845.png)
+![alt text](image-846.png)
+- go back to flow log and put the destination log group and IAM role
+![alt text](image-847.png)
+![alt text](image-848.png)
+- now we have two flow logs, one got to s3 and the other go to cloud watch 
+![alt text](image-849.png)
+- if you go to s3
+![alt text](image-850.png)
+- here the cloud watch
+![alt text](image-851.png)
+- here the logs
+![alt text](image-852.png)
+- go to Athena
+![alt text](image-853.png)
+![alt text](image-854.png)
+![alt text](image-855.png)
+- here we need another s3 to send the result to it
+![alt text](image-856.png)
+- create s3 for athena 
+![alt text](image-857.png)
+![alt text](image-858.png)
+- take the ARN of s3 and go back to athena
+![alt text](image-859.png)
+- put the ARN here
+![alt text](image-860.png)
+- here athena after creation
+![alt text](image-861.png)
+- need to create a db
+![alt text](image-862.png)
+![alt text](image-863.png)
+![alt text](image-864.png)
+![alt text](image-865.png)
+![alt text](image-866.png)
+![alt text](image-867.png)
+![alt text](image-868.png)
+- here all the code 
+```bash
+create database s3_access_logs_db;
+
+CREATE EXTERNAL TABLE IF NOT EXISTS s3_access_logs_db.mybucket_logs(
+         BucketOwner STRING,
+         Bucket STRING,
+         RequestDateTime STRING,
+         RemoteIP STRING,
+         Requester STRING,
+         RequestID STRING,
+         Operation STRING,
+         Key STRING,
+         RequestURI_operation STRING,
+         RequestURI_key STRING,
+         RequestURI_httpProtoversion STRING,
+         HTTPstatus STRING,
+         ErrorCode STRING,
+         BytesSent BIGINT,
+         ObjectSize BIGINT,
+         TotalTime STRING,
+         TurnAroundTime STRING,
+         Referrer STRING,
+         UserAgent STRING,
+         VersionId STRING,
+         HostId STRING,
+         SigV STRING,
+         CipherSuite STRING,
+         AuthType STRING,
+         EndPoint STRING,
+         TLSVersion STRING
+) 
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.RegexSerDe'
+WITH SERDEPROPERTIES (
+         'serialization.format' = '1', 'input.regex' = '([^ ]*) ([^ ]*) \\[(.*?)\\] ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) \\\"([^ ]*) ([^ ]*) (- |[^ ]*)\\\" (-|[0-9]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) (\"[^\"]*\") ([^ ]*)(?: ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*))?.*$' )
+LOCATION 's3://target-bucket-name/prefix/';
+
+
+SELECT requesturi_operation, httpstatus, count(*) FROM "s3_access_logs_db"."mybucket_logs" 
+GROUP BY requesturi_operation, httpstatus;
+
+SELECT * FROM "s3_access_logs_db"."mybucket_logs"
+where httpstatus='403';
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## lab 01 Iam user and groups
 
