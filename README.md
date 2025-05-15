@@ -1010,3 +1010,25 @@ echo "<h1>Hello world from $(hostname -f) in AZ $EC2_AVAIL_ZONE </h1>" > /var/ww
 - idea
 ![alt text](image-510.png)
 ![alt text](image-511.png)
+
+## lab 41 S3 Encryption
+
+- idea
+![alt text](image-512.png)
+![alt text](image-513.png)
+![alt text](image-514.png)
+![alt text](image-515.png)
+![alt text](image-516.png)
+- create a new s3
+![alt text](image-517.png)
+- enable versioning
+![alt text](image-518.png)
+- encryption options
+![alt text](image-519.png)
+![alt text](image-520.png)
+- upload a file
+![alt text](image-521.png)
+- press on file and see encryption details and you can edit it
+![alt text](image-522.png)
+- uploaded another file on s3 and you can control encryption options while uploading
+![alt text](image-523.png)
