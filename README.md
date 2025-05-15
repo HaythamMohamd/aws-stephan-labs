@@ -1093,3 +1093,43 @@ echo "<h1>Hello world from $(hostname -f) in AZ $EC2_AVAIL_ZONE </h1>" > /var/ww
 ![alt text](image-557.png)
 - try again and will work
 ![alt text](image-559.png)
+
+## lab 43 S3 MFA delete
+
+- idea
+![alt text](image-561.png)
+- create s3 and enable version
+![alt text](image-560.png)
+![alt text](image-562.png)
+- note: it is disabled 
+![alt text](image-563.png)
+- will open the root account
+![alt text](image-564.png)
+- create access and secret key
+![alt text](image-565.png)
+- create a profile
+![alt text](image-566.png)
+![alt text](image-567.png)
+- from this command will enable it 
+```bash
+# generate root access keys
+aws configure --profile root-mfa-delete-demo
+
+# enable mfa delete
+aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configuration Status=Enabled,MFADelete=Enabled --mfa "arn-of-mfa-device mfa-code" --profile root-mfa-delete-demo
+```
+![alt text](image-568.png)
+- here it is enabled
+![alt text](image-569.png)
+- here he deleted a file but if you tried to delete the delete marker will not allowed
+![alt text](image-570.png)
+![alt text](image-571.png)
+- solution: is to disable MFA or delete it from cli
+```bash
+# disable mfa delete
+aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configuration Status=Enabled,MFADelete=Disabled --mfa "arn-of-mfa-device mfa-code" --profile root-mfa-delete-demo
+
+# delete the root credentials in the IAM console!!!
+```
+![alt text](image-572.png)
+![alt text](image-573.png)
