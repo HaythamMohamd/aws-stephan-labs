@@ -455,10 +455,38 @@ where httpstatus='403';
 ![alt text](image-881.png)
 ![alt text](image-882.png)
 
+## lab direct connect 
 
+- idea: 
+![alt text](image-883.png)
+![alt text](image-884.png)
 
+## ipv6 for VPC
 
-
+- from vpc => edit cidr 
+![alt text](image-885.png)
+![alt text](image-886.png)
+![alt text](image-887.png)
+![alt text](image-888.png)
+- go to subnet
+![alt text](image-889.png)
+![alt text](image-890.png)
+![alt text](image-891.png)
+![alt text](image-892.png)
+![alt text](image-893.png)
+- go to the ec2 
+![alt text](image-894.png)
+- make it auto sign
+![alt text](image-895.png)
+![alt text](image-896.png)
+- go to the sec group to allow ipv6
+![alt text](image-897.png)
+![alt text](image-898.png)
+- from this site you can test ipv6
+![alt text](image-899.png)
+![alt text](image-900.png)
+- from route table there is aroute is added 
+![alt text](image-901.png)
 
 
 
