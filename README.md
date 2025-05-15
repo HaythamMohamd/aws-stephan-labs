@@ -98,7 +98,33 @@
 - test from ec2 and it will work
 ![alt text](image-706.png)
 
+## lab Bastion host
 
+- idea
+![alt text](image-707.png)
+- this EC2 should be in the public subnet and any one can access it
+![alt text](image-708.png)
+- create a key pair
+![alt text](image-709.png)
+- create an ec2 in the private subnet 
+![alt text](image-710.png)
+- create a seg group for the private ec2 
+![alt text](image-711.png)
+- just allow the port 22 and any traffic come from the sec group of bastion host
+![alt text](image-712.png)
+![alt text](image-713.png)
+- here the both EC2s
+![alt text](image-714.png)
+- so to access the private ec2 you should ssh first to bastion host then ssh to the private one 
+![alt text](image-715.png)
+- copied the private key for the private ec2 and created a file for it in the bastion host 
+![alt text](image-716.png)
+- chmod 400
+![alt text](image-717.png)
+- now we can ssh private ec2 from the bastion host
+![alt text](image-718.png)
+- at it is normal that the private ec2 can't access internet and will solve this issue by the nat gw
+![alt text](image-719.png)
 
 ## lab 01 Iam user and groups
 
