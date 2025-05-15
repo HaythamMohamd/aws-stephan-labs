@@ -1152,3 +1152,17 @@ aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configur
 ![alt text](image-580.png)
 ![alt text](image-581.png)
 
+## lab 45 S3 Pre-Signed URL
+
+- idea
+![alt text](image-583.png)
+- if the public access is disabled, the url will not work
+![alt text](image-584.png)
+- if you opened from here , it will work
+![alt text](image-585.png)
+- from here to share the presigned url
+![alt text](image-586.png)
+- choose the time you want
+![alt text](image-587.png)
+![alt text](image-588.png)
+![alt text](image-589.png)
