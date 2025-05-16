@@ -1903,17 +1903,32 @@ aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configur
 - this will allow only the user which be part from the organization only 
 ![alt text](image-958.png)
 
+## IAM resource policy and role 
 
+- here if you want to access s3 by using cross account , you have two options, first one to assume a role or to create a bucket policy at the s3 and identify who can access 
+![alt text](image-959.png)
+- here the difference between them, for assume role you will take all permissions from the account and your orginal permissions will not work, but with resource policy in this situation is more efficient 
+![alt text](image-960.png)
+- here some services need role and some others need resource based policy
+![alt text](image-961.png)
 
+## IAM permissions boundaries
 
-
-
-
-
-
-
-
-
-
-
-
+- Idea: it is appplied only at roles and users not groups,
+![alt text](image-962.png)
+![alt text](image-970.png)
+- for example here created a user with admin access 
+![alt text](image-963.png)
+![alt text](image-964.png)
+![alt text](image-965.png)
+![alt text](image-966.png)
+- if he set the boundaries, will execute only what you give him at boundaries
+![alt text](image-967.png)
+- here he give only s3 access 
+![alt text](image-968.png)
+- here what will be effictive for john is the s3 access although he have full admin 
+![alt text](image-969.png)
+- here all the evaluation that be done 
+![alt text](image-971.png)
+- example
+![alt text](image-972.png)
