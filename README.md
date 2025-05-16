@@ -1932,3 +1932,15 @@ aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configur
 ![alt text](image-971.png)
 - example
 ![alt text](image-972.png)
+
+
+## IAM Identity center 
+
+- Idea: from one place can single signe one to your accounts
+![alt text](image-973.png)
+![alt text](image-974.png)
+- here once login to th iam identity center then retrieve or restore user identiy from active directory or iam identuy center 
+![alt text](image-975.png)
+- here for example we have two users, will put them in a group and to give them permissions with permission set , full access on dev and read only on prod 
+![alt text](image-976.png)
+![alt text](image-977.png)
