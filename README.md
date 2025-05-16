@@ -1812,3 +1812,99 @@ aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configur
 ![alt text](image-656.png)
 
 
+# IAM service
+## lab organization
+
+- Idea:
+![alt text](image-912.png)
+![alt text](image-913.png)
+![alt text](image-914.png)
+![alt text](image-915.png)
+![alt text](image-916.png)
+![alt text](image-917.png)
+- Lab
+![alt text](image-918.png)
+- organization is a global service and here he created the master account  and child account to do the demo
+![alt text](image-919.png)
+![alt text](image-920.png)
+- from master account he created the organization
+![alt text](image-921.png)
+- here if you want to add an account , create one or invite aws account
+![alt text](image-922.png)
+![alt text](image-923.png)
+- here the invitation is sent from master account to child account
+![alt text](image-924.png)
+- here from the child
+![alt text](image-925.png)
+- here after accept invitation
+![alt text](image-926.png)
+- to organize your account we use OU 
+![alt text](image-927.png)
+- go to root
+![alt text](image-928.png)
+- then create OU 
+![alt text](image-929.png)
+- create DEV OU 
+![alt text](image-930.png)
+- ceated DEV TEST PROD OUs
+![alt text](image-931.png)
+- inside prod created these OUs
+![alt text](image-932.png)
+- to move to child account just selet it and move
+![alt text](image-933.png)
+![alt text](image-934.png)
+![alt text](image-935.png)
+- here after moving the child account into finance 
+![alt text](image-937.png)
+
+- should be like this 
+![alt text](image-936.png)
+- FYI: we made all of this to use the service control polic SCP 
+- we need to restrict child account for dowing somethings 
+- enable first scp 
+![alt text](image-938.png)
+![alt text](image-939.png)
+![alt text](image-940.png)
+- just the full control policy us created and we can create another one 
+![alt text](image-941.png)
+- create a one from deny access s3 
+![alt text](image-942.png)
+![alt text](image-943.png)
+![alt text](image-944.png)
+![alt text](image-945.png)
+- if you click on root from here 
+![alt text](image-946.png)
+- will find full access 
+![alt text](image-947.png)
+- at prod  have two policies, one inherited from root and other is attached directly
+![alt text](image-948.png)
+![alt text](image-949.png)
+- finance
+![alt text](image-950.png)
+![alt text](image-951.png)
+- child
+![alt text](image-952.png)
+- here the denyAccess is inherited from finance
+![alt text](image-953.png)
+- to test it, go to child account and try to access s3 
+![alt text](image-954.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
