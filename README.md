@@ -1890,9 +1890,18 @@ aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configur
 ![alt text](image-954.png)
 
 
+## IAM Advanced policies
 
-
-
+- at left means deny anyone to do any thing except these two ranges of ips 
+- at right means dny anything on ec2 rds dynamodb if you are in these regions eu-central-1 and eu-west-1
+![alt text](image-955.png)
+- at left means allow to stop or start ec2 if tag is dataAnalytics and user tag is data 
+- at right means user can do any thing at ec2 but will deny to stop or terminate without having MFA 
+![alt text](image-956.png)
+- here it will apply at the bucket level , the above one to allow to list bucket , the bottom one is on object level 
+![alt text](image-957.png)
+- this will allow only the user which be part from the organization only 
+![alt text](image-958.png)
 
 
 
