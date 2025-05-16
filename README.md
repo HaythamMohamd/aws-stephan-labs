@@ -1959,3 +1959,9 @@ aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configur
 ![alt text](image-982.png)
 - here if you connect to self managed direcory
 ![alt text](image-983.png)
+
+## AWS control tower 
+
+- idea :
+![alt text](image-984.png)
+![alt text](image-985.png)
