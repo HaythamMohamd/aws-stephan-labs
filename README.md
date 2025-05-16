@@ -1944,3 +1944,18 @@ aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configur
 - here for example we have two users, will put them in a group and to give them permissions with permission set , full access on dev and read only on prod 
 ![alt text](image-976.png)
 ![alt text](image-977.png)
+
+## AWS Directory service
+
+- idea of AD 
+![alt text](image-978.png)
+- here thwe aws managed microfsoft AD , trust between onprem AD and aws manged AD 
+![alt text](image-979.png)
+- AD connector : here if the request try to authenticate throug cloud, it will proxy it to the on prem AD 
+![alt text](image-980.png)
+- simple AD : if you don't have onprem AD 
+![alt text](image-981.png)
+- to integrate IAM identity center with active direcory 
+![alt text](image-982.png)
+- here if you connect to self managed direcory
+![alt text](image-983.png)
