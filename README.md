@@ -2437,46 +2437,115 @@ aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configur
 ![alt text](image-1198.png)
 
 
+## API gateway
 
+- the main idea that all REST APIs go to api gw then proxy these reuests to lambda function which do some processing then make CRUD to dynamodb
+![alt text](image-1199.png)
+- api gw have many features
+![alt text](image-1200.png)
+- api gw integrate with three things (lambda, http and aws service)
+![alt text](image-1201.png)
+- here an example
+![alt text](image-1202.png)
+- api gw endpoints (edge-opteimized, regional and prrivate)
+![alt text](image-1203.png)
+- api ge security
+![alt text](image-1204.png)
 
+### API gateway lab
 
+- 01 we have more choices and choose REST api public 
+![alt text](image-1205.png)
+- put a name 
+![alt text](image-1206.png)
+- here the three endpoints 
+![alt text](image-1207.png)
+- choosed regional and create 
+![alt text](image-1208.png)
+- 02 create method 
+![alt text](image-1209.png)
+- here choose with lambda
+![alt text](image-1210.png)
+- will create a lambda function 
+![alt text](image-1211.png)
+![alt text](image-1212.png)
+![alt text](image-1214.png)
+- will use this code 
+```bash 
+import json
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+def lambda_handler(event, context):
+    body = "Hello from Lambda!"
+    statusCode = 200
+    return {
+        "statusCode": statusCode,
+        "body": json.dumps(body),
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+``` 
+![alt text](image-1215.png)
+- put here 
+![alt text](image-1216.png)
+- deploy this function
+![alt text](image-1217.png)
+- then test 
+![alt text](image-1218.png)
+![alt text](image-1219.png)
+![alt text](image-1220.png)
+- the test is working fine 
+![alt text](image-1221.png)
+- copy the arn of lambda
+![alt text](image-1222.png)
+- go back to the api gw 
+![alt text](image-1223.png)
+![alt text](image-1224.png)
+- if you go to lambda 
+![alt text](image-1225.png)
+- if you go to configuration then permissions
+![alt text](image-1226.png)
+![alt text](image-1227.png)
+- here the policy that created 
+![alt text](image-1228.png)
+- here from api gw , request go from client as a method request then integration request to lambda and the response from lambda till come back to customer 
+![alt text](image-1229.png)
+- to test it. 
+![alt text](image-1230.png)
+- here the result of the test 
+![alt text](image-1231.png)
+- from lambda he change the code and deploy again 
+![alt text](image-1232.png)
+- to onvoke lambda function again from api gw 
+![alt text](image-1233.png)
+- so if we go to cloudwatch service will get the logs 
+![alt text](image-1234.png)
+![alt text](image-1235.png)
+- will create a new resource
+![alt text](image-1236.png)
+![alt text](image-1237.png)
+- in /housed will create a new method
+![alt text](image-1238.png)
+![alt text](image-1239.png)
+- will ctreate another lambda
+![alt text](image-1240.png)
+- go to lambda 
+![alt text](image-1241.png)
+![alt text](image-1242.png)
+![alt text](image-1243.png)
+- copy the arn and go to the api gw 
+![alt text](image-1244.png)
+- to test it. 
+![alt text](image-1245.png)
+![alt text](image-1246.png)
+- to access them from UI , deploy API 
+![alt text](image-1247.png)
+![alt text](image-1248.png)
+- copy this url
+![alt text](image-1249.png)
+- here /dev
+![alt text](image-1250.png)
+- here /houses
+![alt text](image-1251.png)
+- anything else 
+![alt text](image-1252.png)
