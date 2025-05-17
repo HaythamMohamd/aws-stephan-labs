@@ -2247,3 +2247,168 @@ aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configur
 - lift and shift apps from onprem to cloud 
 ![alt text](image-1118.png)
 ![alt text](image-1119.png)
+
+
+## Serverless Overviews from a Solution Architect Perspective
+
+## Serverless 
+
+- serverless menas that there are servers but you don'y manage them 
+![alt text](image-1120.png)
+- all of these services are serverless 
+![alt text](image-1121.png)
+
+## Lambda 
+
+- here the need for lambda to do some task and here a compare with ec2
+![alt text](image-1122.png)
+![alt text](image-1123.png)
+![alt text](image-1124.png)
+- integration between lambda and all these services 
+![alt text](image-1125.png)
+- examples
+![alt text](image-1126.png)
+![alt text](image-1127.png)
+- lambda prices 
+![alt text](image-1128.png)
+
+## lambda HandsOn
+
+- if you go to lambda and at the end /begin , you will find that lambda support a lot of programming language 
+![alt text](image-1129.png)
+- here before 1 millions is free
+![alt text](image-1130.png)
+- after 1 million will pay
+![alt text](image-1131.png)
+- 01 create function
+![alt text](image-1132.png)
+- 02 choose the name and which progarming language 
+![alt text](image-1133.png)
+- 03 create an execution role 
+![alt text](image-1134.png)
+- this is the function code that is created automaticaly 
+![alt text](image-1135.png)
+- here after creation
+![alt text](image-1136.png)
+- here the code which be executed when to call the lambda function
+![alt text](image-1137.png)
+- to test function 
+![alt text](image-1138.png)
+- succeeded and git this value as a result
+![alt text](image-1139.png)
+- here the inputs of the function and if you remove a one and test again will fail
+![alt text](image-1140.png)
+- will fail
+![alt text](image-1141.png)
+- rolled back and save
+![alt text](image-1142.png)
+- from here to monitor
+![alt text](image-1143.png)
+- here the cloudwatch logs 
+![alt text](image-1144.png)
+![alt text](image-1145.png)
+- logs of the first time for sucess
+![alt text](image-1146.png)
+- logs of the error
+![alt text](image-1147.png)
+- here the config of lambda 
+![alt text](image-1148.png)
+- here the role that allow lambda to access cloud watch
+![alt text](image-1149.png)
+
+## lambda limits
+
+![alt text](image-1150.png)
+
+## lambda concurreny
+![alt text](image-1151.png)
+- here you should caclulate your limit before this issue is done
+![alt text](image-1152.png)
+![alt text](image-1153.png)
+![alt text](image-1154.png)
+![alt text](image-1155.png)
+- HandsOn
+![alt text](image-1156.png)
+![alt text](image-1158.png)
+- to test it he make this 0
+![alt text](image-1159.png)
+- tried to test 
+![alt text](image-1160.png)
+![alt text](image-1161.png)
+- to fix it go back and fix concurrency 
+![alt text](image-1162.png)
+![alt text](image-1163.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
