@@ -2339,16 +2339,27 @@ aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configur
 ![alt text](image-1162.png)
 ![alt text](image-1163.png)
 
+## lambda snap start 
 
+- improve lambda function performance
+![alt text](image-1165.png)
 
+## lambda at VPC 
 
+- network fundamental for lambda
+- here by default the lambda can't access anything to your vpc
+![alt text](image-1166.png)
+- solution: you must define vpc id, subents and sec group, so lambda will create ENI in your subnets
+![alt text](image-1167.png)
+- we need this scenraio to ise the lambda with rds proxy as the rds proxy is not accesable pulbic
+![alt text](image-1168.png)
 
+## lambda with rds 
 
-
-
-
-
-
+- here if we need the user once inset to rds so the rds invoke lambda function to send mail by using SES serrvice to users
+![alt text](image-1169.png)
+- here the notification about the data base itself not the data inside it 
+![alt text](image-1170.png)
 
 
 
