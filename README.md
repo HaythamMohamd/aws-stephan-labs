@@ -2134,3 +2134,9 @@ aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configur
 ![alt text](image-1063.png)
 - for the task definition dergister them 
 ![alt text](image-1064.png)
+
+## ECR 
+
+- here the ECR service is for saving images, and if ec2 wanted to pull images should the ec2 instances on it have IAM role 
+![alt text](image-1065.png)
+
