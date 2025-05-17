@@ -2240,3 +2240,10 @@ aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configur
 ![alt text](image-1116.png)
 - delete app
 ![alt text](image-1117.png)
+
+## Aws App2Container A2C
+
+- this a cli tool to migrate and moderninzing java adn .net apps 
+- lift and shift apps from onprem to cloud 
+![alt text](image-1118.png)
+![alt text](image-1119.png)
