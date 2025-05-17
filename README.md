@@ -1813,7 +1813,7 @@ aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configur
 
 
 # IAM service
-## lab organization
+## lab 53 organization
 
 - Idea:
 ![alt text](image-912.png)
@@ -1890,7 +1890,7 @@ aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configur
 ![alt text](image-954.png)
 
 
-## IAM Advanced policies
+## lab 54 IAM Advanced policies
 
 - at left means deny anyone to do any thing except these two ranges of ips 
 - at right means dny anything on ec2 rds dynamodb if you are in these regions eu-central-1 and eu-west-1
@@ -1903,7 +1903,7 @@ aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configur
 - this will allow only the user which be part from the organization only 
 ![alt text](image-958.png)
 
-## IAM resource policy and role 
+## lab 55 IAM resource policy and role 
 
 - here if you want to access s3 by using cross account , you have two options, first one to assume a role or to create a bucket policy at the s3 and identify who can access 
 ![alt text](image-959.png)
@@ -1912,7 +1912,7 @@ aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configur
 - here some services need role and some others need resource based policy
 ![alt text](image-961.png)
 
-## IAM permissions boundaries
+## la 56 IAM permissions boundaries
 
 - Idea: it is appplied only at roles and users not groups,
 ![alt text](image-962.png)
@@ -1934,7 +1934,7 @@ aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configur
 ![alt text](image-972.png)
 
 
-## IAM Identity center 
+## lab 57 IAM Identity center 
 
 - Idea: from one place can single signe one to your accounts
 ![alt text](image-973.png)
@@ -1945,7 +1945,7 @@ aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configur
 ![alt text](image-976.png)
 ![alt text](image-977.png)
 
-## AWS Directory service
+## lab 58 AWS Directory service
 
 - idea of AD 
 ![alt text](image-978.png)
@@ -1960,8 +1960,177 @@ aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configur
 - here if you connect to self managed direcory
 ![alt text](image-983.png)
 
-## AWS control tower 
+## lab 59 AWS control tower 
 
 - idea :
 ![alt text](image-984.png)
 ![alt text](image-985.png)
+
+
+## Containers on AWS: ECS, Fargate, ECR, and EKS 
+## Docker 
+- Idea:
+![alt text](image-986.png)
+![alt text](image-987.png)
+![alt text](image-988.png)
+![alt text](image-989.png)
+![alt text](image-990.png)
+![alt text](image-991.png)
+
+## ECS Idea
+
+- you are responsible for the ECS2s which Containers are created on , each ec2 should have ECS agent 
+![alt text](image-992.png)
+- the other type is Fargate, here you don't provison the infra , it is serverless 
+![alt text](image-993.png)
+- IAM roles for ECS are two types (EC2 instance profile and ECS task role)
+- EC2 instance profile: this for agent one ec2 to be aball to do api calls to ecs service, send container logs to cloud watch , pull images from ECR
+- ECS task role: each task has a speceific role to enable you to acces other aws service like s3 or dynamodb 
+![alt text](image-994.png)
+- here integration between ECS and loadbalancer
+![alt text](image-995.png)
+- here between ECS and EFS 
+![alt text](image-996.png)
+
+## ECS handson
+
+- create ecs
+![alt text](image-997.png)
+![alt text](image-998.png)
+- here choose the type you want 
+![alt text](image-999.png)
+- create auto scaling group
+![alt text](image-1000.png)
+- choose t2.micro  and desired capacity 
+![alt text](image-1001.png)
+- didn't choose ssh key pair 
+![alt text](image-1002.png)
+- choose the default vpc and sec group setting
+![alt text](image-1003.png)
+![alt text](image-1004.png)
+- if you go to the auto scaling group you will find a one is created for you by ECS
+![alt text](image-1005.png)
+- here the desired capacity that we already configured 
+![alt text](image-1006.png)
+- go back to the ECS, here the cluster is created
+![alt text](image-1007.png)
+- press on the name of ECS cluster , here at the infra there are three capacity providers 
+![alt text](image-1008.png)
+- if you go to auto scaling and edit this to be 1 
+![alt text](image-1010.png)
+![alt text](image-1009.png)
+- in this moment an ec2 will be created by auto scaling service and will register itself to be a part of ECS cluster 
+- here it is in service at the auto scaling 
+![alt text](image-1011.png)
+- and here it is part of the cluster 
+![alt text](image-1012.png)
+
+
+## ECS Create service and task definition 
+
+- create a task definition
+![alt text](image-1013.png)
+- create nginx demo and will get the image from dockerhub
+![alt text](image-1014.png)
+![alt text](image-1015.png)
+- chaoose launch type 
+![alt text](image-1016.png)
+- choose your task size 
+![alt text](image-1017.png)
+- here you can create task role if you want your containers to use AWS at for our demo no need  , and task execution role will be created automatic
+![alt text](image-1018.png)
+- here put the name and the image uri 
+![alt text](image-1019.png)
+- here port mapping 
+![alt text](image-1020.png)
+![alt text](image-1021.png)
+- here after creation
+![alt text](image-1022.png)
+- let's launch this task definition as service from ECS cluser, go to ecs cluser and create a service 
+![alt text](image-1023.png)
+- choose launch type, will be fargate and the platform is latest 
+![alt text](image-1024.png)
+![alt text](image-1025.png)
+![alt text](image-1026.png)
+- for sec group 
+![alt text](image-1027.png)
+- create a loadbalancer
+![alt text](image-1028.png)
+- target group 
+![alt text](image-1029.png)
+![alt text](image-1031.png)
+- here the service after creation 
+![alt text](image-1030.png)
+- here the details of it 
+![alt text](image-1032.png)
+- in the target group it is linked with the loadbalancer
+![alt text](image-1033.png) 
+- this is the ip address of the container
+![alt text](image-1034.png)
+- here the load balancer
+![alt text](image-1035.png)
+- copy the dns of load balancer and paste here 
+![alt text](image-1036.png)
+- this the task
+![alt text](image-1037.png)
+- and the logs 
+![alt text](image-1038.png)
+- events of the service 
+![alt text](image-1039.png)
+- here from service we can update there repolicas 
+![alt text](image-1040.png)
+![alt text](image-1041.png)
+![alt text](image-1042.png)
+- here the tasks
+![alt text](image-1043.png)
+- if you opend the dns again you will find more than containers are running 
+![alt text](image-1044.png)
+![alt text](image-1045.png)
+- update the service again to be 0 because billing
+![alt text](image-1046.png)
+![alt text](image-1047.png)
+![alt text](image-1049.png)
+- and insure at the auto scaling that the desired is 0 
+![alt text](image-1048.png)
+
+## ECS service autoscaling 
+
+- Idea
+![alt text](image-1050.png)
+![alt text](image-1051.png)
+- here if the laod of the cpu increaesed so the cloudwatch metric will be triggred to cloudwatch alarm for the auto scaling service to created a new task 
+![alt text](image-1052.png)
+
+##   ECS - Solutions Architectures
+
+- here an example
+- 01 user upload any object to s3 
+- 02 an event will sent to amzaon event bridge 
+- 03 amazon event bridge have a rule to run ecs task 
+- 04 the ecs task should have ecs task role to let the containers have  read and write for s3 and dynamo dab 
+- 05 the task can now get data from s3 and put the result on dynamodb
+![alt text](image-1053.png)
+- another example
+- here every one hour the amazon event bridge trigger a rule to create ECS task which should also have a task role to let containers access s3 
+![alt text](image-1054.png)
+- another example
+- the ecs service haave more than one tasks whihc pull messages from sqs 
+![alt text](image-1055.png)
+- another example
+![alt text](image-1056.png)
+
+## ECS clean up 
+
+- stop the service first and enusre that the desired tasks is 0 
+![alt text](image-1057.png)
+![alt text](image-1058.png)
+![alt text](image-1059.png)
+- then delete it. 
+![alt text](image-1060.png)
+- note that the cloudformation service will do this 
+![alt text](image-1061.png)
+![alt text](image-1062.png)
+- after deleteion the service we can delete the cluster 
+![alt text](image-1063.png)
+- for the task definition dergister them 
+![alt text](image-1064.png)
