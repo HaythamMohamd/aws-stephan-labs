@@ -2361,23 +2361,80 @@ aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configur
 - here the notification about the data base itself not the data inside it 
 ![alt text](image-1170.png)
 
+## Dynamodb
+
+- it is nosql db 
+![alt text](image-1172.png)
+- dynamodb is rabidly evolve schema 
+![alt text](image-1173.png)
+- here example for it  
+![alt text](image-1174.png)
+- here the modes of dynamodb
+![alt text](image-1175.png)
+
+## Dynamodb lab (not free)
+
+- create table
+![alt text](image-1176.png)
+- put the name of table, then put the partion key 
+![alt text](image-1177.png)
+- choose this for more options 
+![alt text](image-1178.png)
+- if you choose the on-demand so the pay will be as the actual read and write for app and this option is a good choice if you working on unpredectable workload  
+![alt text](image-1179.png)
+- here the second option if you want to put RCU and WCU 
+![alt text](image-1180.png)
+- here he siabled auto scaling and put the provisioned capacity uints for read and write
+![alt text](image-1181.png)
+- if you don't know you can let the system do it  
+![alt text](image-1182.png)
+- he made the example as this 
+![alt text](image-1183.png)
+- here the bills till now 
+![alt text](image-1184.png)
+![alt text](image-1185.png)
+- after creation 
+![alt text](image-1186.png)
+- to create items 
+![alt text](image-1187.png)
+![alt text](image-1188.png)
+- create another item 
+![alt text](image-1189.png)
+![alt text](image-1190.png)
 
 
+## Dynamodb Advanced features
 
 
+### dynamodb accelerator DAX
 
+- it is goo for read congestion by caching and doesn'y require app logic modification 
+![alt text](image-1191.png)
 
+- difference between dynamodb and elasticache
+![alt text](image-1192.png)
 
+### dynamodb steam processing 
+- here
+![alt text](image-1193.png)
+![alt text](image-1194.png)
 
+### dynamodb global tables 
+- here 
+![alt text](image-1195.png)
 
+### dynamodb TTL 
 
+- here 
+![alt text](image-1196.png)
 
+### dynamodb bkp
+- here 
+![alt text](image-1197.png)
 
-
-
-
-
-
+### dynamo db with s3 
+- here 
+![alt text](image-1198.png)
 
 
 
