@@ -2213,3 +2213,30 @@ aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configur
 ![alt text](image-1102.png)
 - delete node group first then delete the cluster
 ![alt text](image-1104.png)
+
+
+## Aws app runner 
+
+- you don't need anything for infra , you can build and deploy your web app 
+![alt text](image-1105.png)
+- handson:  not free to do 
+![alt text](image-1106.png)
+
+- will get from ecr gallery
+![alt text](image-1107.png)
+![alt text](image-1108.png)
+![alt text](image-1109.png)
+
+- here to know the port
+![alt text](image-1110.png)
+![alt text](image-1111.png)
+- auto scaling
+![alt text](image-1112.png)
+![alt text](image-1113.png)
+- after creation
+![alt text](image-1114.png)
+![alt text](image-1115.png)
+- here the logs 
+![alt text](image-1116.png)
+- delete app
+![alt text](image-1117.png)
