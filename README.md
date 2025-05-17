@@ -2549,3 +2549,18 @@ def lambda_handler(event, context):
 ![alt text](image-1251.png)
 - anything else 
 ![alt text](image-1252.png)
+
+## AWS step function
+
+- build serverless visual workflow 
+![alt text](image-1253.png)
+
+## Amazon Cognito 
+
+- to give user an identity to interact with web and mobile app
+![alt text](image-1254.png)
+![alt text](image-1255.png)
+![alt text](image-1256.png)
+![alt text](image-1257.png)
+![alt text](image-1258.png)
+![alt text](image-1259.png)
