@@ -2140,3 +2140,76 @@ aws s3api put-bucket-versioning --bucket mfa-demo-stephane --versioning-configur
 - here the ECR service is for saving images, and if ec2 wanted to pull images should the ec2 instances on it have IAM role 
 ![alt text](image-1065.png)
 
+## EKS 
+
+- here it is the k8s service 
+![alt text](image-1066.png)
+- here diagram 
+![alt text](image-1067.png)
+- EKS node type
+- Manged node groups => aws create masters for you and you manage workers 
+- self-managed nodes => you are responsible of it 
+- fargate => all managed by aws 
+![alt text](image-1068.png)
+- here eks data volume 
+![alt text](image-1069.png)
+
+## EKS HandsOn
+
+- here the eks will cost you money, don't do it with free tier
+![alt text](image-1070.png)
+![alt text](image-1071.png)
+- put name ane version and create a cluser service role
+![alt text](image-1072.png)
+- will open a link and here the. steps you should follow 
+![alt text](image-1073.png)
+- 01 create a role 
+![alt text](image-1074.png)
+![alt text](image-1076.png)
+![alt text](image-1075.png)
+![alt text](image-1077.png)
+![alt text](image-1078.png)
+![alt text](image-1079.png)
+- 02 go back to eks and choose the role 
+![alt text](image-1080.png)
+- 03 here where to deploy the cluser 
+![alt text](image-1081.png)
+- 04 choose the default sec group 
+![alt text](image-1082.png)
+- 05 cluster endpoint access here made it public 
+![alt text](image-1083.png)
+![alt text](image-1084.png)
+- note: here after creating the cluster you should choose managed node group or fargate 
+![alt text](image-1085.png)
+- here if you go to resources 
+![alt text](image-1086.png)
+- 06 go to the compute to add node group (workers) 
+![alt text](image-1087.png)
+- put the name and create a role for node group 
+![alt text](image-1088.png)
+- create a role and the type should be ec2
+![alt text](image-1089.png)
+![alt text](image-1090.png)
+- need AmazonEKSWorkrNodePolicy  
+![alt text](image-1092.png)
+- from the decomentation we need these also 
+![alt text](image-1093.png)
+![alt text](image-1094.png)
+- 07 go back to eks and choose the role 
+![alt text](image-1095.png)
+- choose what you want here
+![alt text](image-1096.png)
+![alt text](image-1097.png)
+- here means when you update how many nodes should be down
+![alt text](image-1098.png)
+- here the subnets
+![alt text](image-1099.png)
+![alt text](image-1100.png)
+- here the other option if you want to creat nodes with fargate
+![alt text](image-1101.png)
+- here addons
+![alt text](image-1103.png)
+- from here the addons and if you want to install ebs addons
+![alt text](image-1102.png)
+- delete node group first then delete the cluster
+![alt text](image-1104.png)
