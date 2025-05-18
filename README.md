@@ -2856,37 +2856,71 @@ def lambda_handler(event, context):
 ![alt text](image-1500.png)
 - here the default bus that is created by default at your account and we can define rules on it 
 ![alt text](image-1501.png)
+- create your own bus 
+![alt text](image-1502.png)
+![alt text](image-1503.png)
+![alt text](image-1504.png)
+
+- here the partener events , for example catch all events which come from auth0
+![alt text](image-1505.png)
+- go to rules and create a one 
+![alt text](image-1507.png)
+- put a name and rule type 
+![alt text](image-1506.png)
+- select a source
+![alt text](image-1508.png)
+- sample event 
+![alt text](image-1509.png)
+![alt text](image-1510.png)
+![alt text](image-1511.png)
+- but if you choose 
+![alt text](image-1512.png)
+![alt text](image-1513.png)
+![alt text](image-1514.png)
+![alt text](image-1515.png)
+![alt text](image-1516.png)
 
 
+## CloudWatch Insights and Operational Visibility
+
+- here for containers 
+![alt text](image-1517.png)
+- here for lambda 
+![alt text](image-1518.png)
+- cloudwatch contributor 
+![alt text](image-1519.png)
+- app insihts 
+![alt text](image-1520.png)
+- summary
+![alt text](image-1521.png)
+
+##  CloudTrail Overview 
+
+- is a sevice which collect in api at the account for any service 
+![alt text](image-1522.png)
+![alt text](image-1523.png)
+- three types ov cloudTrain events 
+![alt text](image-1524.png)
+- cloudtrain insughts 
+![alt text](image-1525.png)
+- cloudtrail events retention
+
+## CloudTrail Hands On
+- at the event history, what happened last 90 days 
+![alt text](image-1526.png)
+- for exapmle will terminate the instance 
+![alt text](image-1527.png)
+- after 5 mins , here an api call for terminate instance and who did it 
+![alt text](image-1528.png)
+- all details 
+![alt text](image-1529.png)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+### CloudTrail - EventBridge Integration
+- here an example 
+![alt text](image-1530.png)
+- another example 
+![alt text](image-1531.png)
 ## Section 26: AWS Security & Encryption: KMS, SSM Parameter Store, Shield, WAF
 ### encryption 101 
 
