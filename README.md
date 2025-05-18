@@ -2997,4 +2997,19 @@ def lambda_handler(event, context):
 ![alt text](image-1399.png)
 - here another option if you create a secret with rds 
 ![alt text](image-1400.png)
+
+## AWS certificate Manager ACM 
+- used for easily provision, manage and deploy TLS certs 
+- here the loadbalcner call ACM for certs and clients can access the loadbalancer with https 
+![alt text](image-1401.png)
+- here steps for requesting public cert 
+![alt text](image-1402.png)
+- here if the cert is out the ACM 
+![alt text](image-1403.png)
+- here a redirect rule on loadbalancer from http to https 
+![alt text](image-1404.png)
+- api gw endpoints 
+![alt text](image-1405.png)
+- api integration with api gw 
+![alt text](image-1406.png)
 ## Section 28: Disaster Recovery & Migrations
