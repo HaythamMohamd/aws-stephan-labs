@@ -2844,4 +2844,139 @@ cat ExampleFileDecrypted.base64 | base64 --decode > ExampleFileDecrypted.txt
 - here the steps. 
 ![alt text](image-1332.png)
 
+
+### SSM parameter store 
+- it is a secure storage for configuration and secrets 
+- here the app save some plain text or encrypted config on ssm parameter strore , which integrate with kms for encryption
+![alt text](image-1333.png)
+- hierarchy of parameter store 
+![alt text](image-1334.png)
+- price
+![alt text](image-1335.png)
+- some Advanced parameter tiers 
+![alt text](image-1336.png)
+
+### SSM parameter store  lab on CLI 
+- 01 go to system manager then parameter store 
+![alt text](image-1337.png)
+![alt text](image-1339.png)
+![alt text](image-1338.png)
+- put a name and descriptiion 
+![alt text](image-1340.png)
+![alt text](image-1341.png)
+- here after creation 
+![alt text](image-1342.png)
+- create another one with ssecure string 
+![alt text](image-1343.png)
+- he used the key that he created before at kms 
+![alt text](image-1344.png)
+![alt text](image-1345.png)
+- create third one for prod 
+![alt text](image-1346.png)
+- creae fourth one for password 
+![alt text](image-1347.png)
+- here all of them 
+![alt text](image-1348.png)
+- let's get them from cli 
+```bash
+# GET PARAMETERS
+aws ssm get-parameters --names /my-app/dev/db-url /my-app/dev/db-password
+# GET PARAMETERS WITH DECRYPTION
+aws ssm get-parameters --names /my-app/dev/db-url /my-app/dev/db-password --with-decryption
+
+# GET PARAMETERS BY PATH
+aws ssm get-parameters-by-path --path /my-app/dev/
+# GET PARAMETERS BY PATH RECURSIVE
+aws ssm get-parameters-by-path --path /my-app/ --recursive
+# GET PARAMETERS BY PATH WITH DECRYPTION
+aws ssm get-parameters-by-path --path /my-app/ --recursive --with-decryption
+```
+![alt text](image-1349.png)
+![alt text](image-1350.png)
+![alt text](image-1351.png)
+![alt text](image-1352.png)
+![alt text](image-1353.png)
+
+### SSM Parameter Store Hands On (AWS Lambda)
+- create a lambda function 
+![alt text](image-1354.png)
+![alt text](image-1355.png)
+![alt text](image-1356.png)
+- create a role for lambda which give permissions for lambda for cloudwatch logs 
+![alt text](image-1357.png)
+- put this code using boto3 
+```bash
+import json
+import boto3
+import os
+
+ssm = boto3.client('ssm', region_name="eu-west-3")
+dev_or_prod = os.environ['DEV_OR_PROD']
+
+def lambda_handler(event, context):
+    db_url = ssm.get_parameters(Names=["/my-app/" + dev_or_prod + "/db-url"])
+    print(db_url)   
+    db_password = ssm.get_parameters(Names=["/my-app/" + dev_or_prod + "/db-password"], WithDecryption=True)
+    print(db_password)
+    return "worked!"
+
+```
+![alt text](image-1358.png)
+- test it. 
+![alt text](image-1359.png)
+![alt text](image-1360.png)
+![alt text](image-1361.png)
+- to test it again we got an error 
+![alt text](image-1363.png)
+![alt text](image-1362.png)
+- it should boto3 
+![alt text](image-1364.png)
+- here another error as you don't have permission
+![alt text](image-1365.png)
+- solution: go to roles and search about hello-world-ssm-role 
+![alt text](image-1366.png)
+- will add inline policy 
+![alt text](image-1367.png)
+- choose service and search about system manager
+![alt text](image-1368.png)
+- put the action as this 
+![alt text](image-1369.png)
+![alt text](image-1370.png)
+- and add the resources will allow anything under my-app/*
+![alt text](image-1371.png)
+![alt text](image-1372.png)
+![alt text](image-1373.png)
+![alt text](image-1374.png)
+- if you go back to lambda
+![alt text](image-1375.png)
+- wait about 5 mins and test again 
+![alt text](image-1376.png)
+- here the logs 
+![alt text](image-1377.png)
+- add withDecryption=true parameter
+![alt text](image-1378.png)
+- he tested it again but we got an error as you don't have access for kms 
+![alt text](image-1379.png)
+![alt text](image-1380.png)
+- solution: go to the role and add policies
+![alt text](image-1381.png)
+- add form kms 
+![alt text](image-1382.png)
+- FYI he used this key 
+![alt text](image-1383.png)
+![alt text](image-1384.png)
+![alt text](image-1385.png)
+- go back to lambda 
+![alt text](image-1386.png)
+- test again and worked 
+![alt text](image-1387.png)
+- here added this environment variable 
+![alt text](image-1388.png)
+- put it in the code 
+![alt text](image-1389.png)
+- save and test 
+![alt text](image-1390.png)
+- if put it as prod 
+![alt text](image-1391.png)
+![alt text](image-1392.png)
 ## Section 28: Disaster Recovery & Migrations
