@@ -2979,4 +2979,22 @@ def lambda_handler(event, context):
 - if put it as prod 
 ![alt text](image-1391.png)
 ![alt text](image-1392.png)
+
+## AWS Secrets Manager Overview
+- using it for store secrets 
+![alt text](image-1393.png)
+- secret manager for multi region
+![alt text](image-1394.png)
+
+### AWS Secrets Manager lab
+- create a secret 
+![alt text](image-1395.png)
+- create other system type 
+![alt text](image-1396.png)
+![alt text](image-1397.png)
+![alt text](image-1398.png)
+- here if you want to replicat your secrets 
+![alt text](image-1399.png)
+- here another option if you create a secret with rds 
+![alt text](image-1400.png)
 ## Section 28: Disaster Recovery & Migrations
