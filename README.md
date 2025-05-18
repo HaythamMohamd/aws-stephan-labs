@@ -3012,4 +3012,12 @@ def lambda_handler(event, context):
 ![alt text](image-1405.png)
 - api integration with api gw 
 ![alt text](image-1406.png)
+
+## AWS WAF
+- here WAF is deployed on ALB as it is layer 7 but not NLB as it is layer 4 
+![alt text](image-1407.png)
+- waf rules 
+![alt text](image-1408.png)
+- to use fixed ip with waf we can use global accelerator 
+![alt text](image-1409.png)
 ## Section 28: Disaster Recovery & Migrations
