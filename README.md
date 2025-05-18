@@ -3020,4 +3020,10 @@ def lambda_handler(event, context):
 ![alt text](image-1408.png)
 - to use fixed ip with waf we can use global accelerator 
 ![alt text](image-1409.png)
+
+## AWS Shield 
+
+- protect you from DDOS 
+![alt text](image-1410.png)
+
 ## Section 28: Disaster Recovery & Migrations
