@@ -2666,3 +2666,165 @@ def lambda_handler(event, context):
 - here 
 ![alt text](image-1291.png)
 ![alt text](image-1292.png)
+
+
+## Data & Analytics
+
+### Athena
+
+
+### Redshift
+
+
+### Opensearch 
+
+
+### EMR 
+
+
+
+### Quicksight 
+
+
+### Glue 
+
+
+### lake formation 
+
+
+### managed serveices for apache flink
+
+
+### MSK  
+
+
+### Bigdata ingestion pipeline 
+
+
+## Machine Learning 
+
+
+## Section 24: AWS Monitoring & Audit: CloudWatch, CloudTrail & Config
+
+
+## Section 26: AWS Security & Encryption: KMS, SSM Parameter Store, Shield, WAF
+
+### encryption 101 
+
+- TLS is the newer version of ssl, date is encrypted before sending it to the server , the examp le here if the client want to login to the server with user and pass so should be incrypted in the client and decrypted in the server 
+![alt text](image-1293.png)
+- Server side encryption: here the encryption at server side, the data is encrypted after send to the server then decrypted before go back to client
+![alt text](image-1294.png)
+- client side encryption: here the encryption and decryption are happen at the client side
+![alt text](image-1295.png)
+
+### KMS 
+
+- here the concept of KMS 
+![alt text](image-1296.png)
+- KMS key types
+  - Symmetric: single key is used for ecrypt and decrypt, services which is integrate with kms are using Symmetric key 
+  - Asymmetric: public and private keys are using
+![alt text](image-1297.png)
+- AWS KMS keys 
+  - AWS owned keys
+  - AWS managed keys 
+![alt text](image-1298.png)
+- here to copy snapshot between two regions
+  - ebs is encrypted with kms with key a
+  - after create a snapshot form ebs it also encrypted with key a 
+  - once transfet to the other region the snapshot should be rencrypted with key b
+  - create ebs from snapshot in the other region with key b 
+  ![alt text](image-1299.png) 
+- kms key policies: like s3 policies
+  - default kms key policy
+  - custom kms key policy
+  ![alt text](image-1300.png)
+- here an example for copying snapshot across accounts 
+![alt text](image-1301.png)
+
+#### KMS lab
+- here the kms managed keys
+![alt text](image-1302.png)
+- for example here the ebs key and here the key policy which define what should access this key 
+![alt text](image-1303.png)
+- here at the conditions should be your account and the service ec2 which acces ebs 
+![alt text](image-1304.png)
+- FYI: custom key store is for HMS and this out if scope 
+![alt text](image-1305.png)
+- let's create customer managed key , this cost 1 $ per month 
+![alt text](image-1306.png)
+- here will do it Symmetric
+![alt text](image-1307.png)
+![alt text](image-1308.png)
+![alt text](image-1309.png)
+- here he used the deafult key policy
+![alt text](image-1310.png)
+- here after createion 
+![alt text](image-1311.png)
+- here the key policy 
+![alt text](image-1312.png)
+- from here to configure key rotation 
+![alt text](image-1313.png)
+![alt text](image-1314.png)
+![alt text](image-1315.png)
+- here the on demand key rotation 
+![alt text](image-1316.png)
+- from here you can disable or schedual key deleteion
+![alt text](image-1317.png)
+
+### use the cli to encrypt or decrypt some data 
+
+```bash
+# 1) encryption
+aws kms encrypt --key-id alias/tutorial --plaintext fileb://ExampleSecretFile.txt --output text --query CiphertextBlob  --region eu-west-2 > ExampleSecretFileEncrypted.base64
+
+# base64 decode for Linux or Mac OS 
+cat ExampleSecretFileEncrypted.base64 | base64 --decode > ExampleSecretFileEncrypted
+
+# base64 decode for Windows
+certutil -decode .\ExampleSecretFileEncrypted.base64 .\ExampleSecretFileEncrypted
+
+
+# 2) decryption
+
+aws kms decrypt --ciphertext-blob fileb://ExampleSecretFileEncrypted   --output text --query Plaintext > ExampleFileDecrypted.base64  --region eu-west-2
+
+# base64 decode for Linux or Mac OS 
+cat ExampleFileDecrypted.base64 | base64 --decode > ExampleFileDecrypted.txt
+
+
+# base64 decode for Windows
+certutil -decode .\ExampleFileDecrypted.base64 .\ExampleFileDecrypted.txt
+```
+- creat a file `ExampleSecretFile.txt` and put on it `SuperSecretPassword`
+- this is the key that we created 
+![alt text](image-1318.png)
+- execut this 
+```bash
+aws kms encrypt --key-id alias/tutorial --plaintext fileb://ExampleSecretFile.txt --output text --query CiphertextBlob  --region eu-west-2 > ExampleSecretFileEncrypted.base64
+```
+![alt text](image-1319.png)
+- this is the ecrypted file 
+![alt text](image-1320.png)
+- to encrypt it with base64 
+```bash
+cat ExampleFileDecrypted.base64 | base64 --decode > ExampleFileDecrypted.txt
+```
+![alt text](image-1321.png)
+![alt text](image-1322.png)
+- to decrypt it with base64 
+```bash
+aws kms decrypt --ciphertext-blob fileb://ExampleSecretFileEncrypted   --output text --query Plaintext > ExampleFileDecrypted.base64  --region eu-west-2
+```
+![alt text](image-1323.png)
+![alt text](image-1324.png)
+- base64 decode for Linux or Mac OS 
+```bash
+cat ExampleFileDecrypted.base64 | base64 --decode > ExampleFileDecrypted.txt
+```
+![alt text](image-1325.png)
+![alt text](image-1326.png)
+
+
+## Section 28: Disaster Recovery & Migrations
