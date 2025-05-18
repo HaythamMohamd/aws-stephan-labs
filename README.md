@@ -3026,4 +3026,30 @@ def lambda_handler(event, context):
 - protect you from DDOS 
 ![alt text](image-1410.png)
 
+## AWS Firewall manager  
+- manage rules in all accounts on aws organization
+![alt text](image-1411.png)
+- difference between them 
+![alt text](image-1412.png)
+
+## AWS Firewall manager and shield  lab 
+- create a web acl 
+![alt text](image-1413.png)
+![alt text](image-1414.png)
+- to add elb resource from here 
+![alt text](image-1415.png)
+- here to add rules 
+![alt text](image-1416.png)
+![alt text](image-1417.png)
+![alt text](image-1418.png)
+![alt text](image-1419.png)
+![alt text](image-1420.png)
+![alt text](image-1421.png)
+![alt text](image-1422.png)
+![alt text](image-1423.png)
+![alt text](image-1424.png)
+![alt text](image-1425.png)
+- from here to create shield it is 3000$ per month :D
+![alt text](image-1426.png)
+![alt text](image-1427.png)
 ## Section 28: Disaster Recovery & Migrations
