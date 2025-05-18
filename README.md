@@ -2619,3 +2619,50 @@ def lambda_handler(event, context):
 - features for using cloudfront
 ![alt text](image-1280.png)
 
+## Databases on aws 
+
+- you need to answer these questions to determine which db is suitable for you 
+![alt text](image-1281.png)
+- here all the types of db 
+![alt text](image-1282.png)
+
+### RDS summary 
+
+- it is managed Postgresql,mysql,oracle,sql server, db2, mariadb, custom 
+![alt text](image-1283.png)
+
+### Aurora summary
+
+- compatible with api for Postgresql and mysql
+![alt text](image-1284.png)
+
+### elasticache
+
+- it is a managed reedis and Memcached 
+![alt text](image-1285.png)
+
+### s3 
+
+- here 
+![alt text](image-1286.png)
+
+### document db 
+- here 
+![alt text](image-1287.png)
+
+### amazon neptun 
+- here 
+![alt text](image-1288.png)
+
+### amazon keyspaces 
+- here 
+![alt text](image-1289.png)
+
+### amazon QLDB 
+- here 
+![alt text](image-1290.png)
+
+### amazon timestream 
+- here 
+![alt text](image-1291.png)
+![alt text](image-1292.png)
