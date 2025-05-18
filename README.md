@@ -2564,3 +2564,58 @@ def lambda_handler(event, context):
 ![alt text](image-1257.png)
 ![alt text](image-1258.png)
 ![alt text](image-1259.png)
+
+## Serverless solution architect 
+
+### first example my todo list
+
+- need to do Architecture for this 
+![alt text](image-1260.png)
+- here the mobile client should authenticate for temp credentials from cognito then got to api gw wich verify the authentication from cogneto , then invoke lambda which query data from Dynamodb
+![alt text](image-1261.png)
+- here here the mobile client should authenticate for temp credentials from cognito then store and retrieve files on s3 
+![alt text](image-1262.png)
+- here the same but for high read throughput we use DAX before Dynamodb
+![alt text](image-1263.png)
+- here we can cache at the api gw 
+![alt text](image-1264.png)
+- conclusion 
+![alt text](image-1265.png)
+
+### second example my blog.com 
+
+- this what we need to do 
+![alt text](image-1266.png)
+- as he saiad static content so we will use s3 and for global , we should use cloudfront
+![alt text](image-1267.png)
+- here for security will creat OAC at the s3 to ensure that the CloudFront will only access the s3 
+![alt text](image-1268.png)
+- for public REST API will user the api gw then lambdat then DAX then Dynamodb
+![alt text](image-1269.png)
+- for global tables will use Dynamodb global tables
+![alt text](image-1270.png)
+- to send a user a welcome msg, will use dynamodb stream which invoke lambda which should have IAM role to integrate with SES service to send mails
+![alt text](image-1271.png)
+- here if the user upload a file to s3 direct or using cloudfront , s3 will trigger a lambda to create thumbnails photos to othere s3 and from s3 we can integrate with sqs or sns 
+![alt text](image-1272.png)
+- conclusion
+![alt text](image-1273.png)
+
+## Microservices Architecture
+
+- intro for Microservices
+![alt text](image-1274.png)
+- here if we have more than service and each one depends on other
+![alt text](image-1275.png)
+![alt text](image-1276.png)
+
+## Software updates distribution
+- if we have an app running on ec2 and each time you want to update it 
+![alt text](image-1277.png)
+- the issue here the updates at the efs 
+![alt text](image-1278.png)
+- it is better to use cloudfront
+![alt text](image-1279.png)
+- features for using cloudfront
+![alt text](image-1280.png)
+
