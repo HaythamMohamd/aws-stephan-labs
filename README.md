@@ -2837,15 +2837,25 @@ def lambda_handler(event, context):
 ![alt text](image-1493.png)
 ![alt text](image-1494.png)
 
-### Amazon EventBridge 
+## Amazon EventBridge 
 
+- you can make cron jobs, event pattern , trigger lambda ,...
+![alt text](image-1495.png)
+- all at the lift cab send events so with amazon eventbridge you can make filter on these events and will generate json ducoment which describe these events then sent to many destinations 
+![alt text](image-1496.png)
+- here we have default event bus and also partner event bus , also there is custom event bus 
+![alt text](image-1497.png)
+- schema registery 
+![alt text](image-1498.png)
+- resource based policy for event bridge 
+![alt text](image-1499.png)
 
+###  Amazon EventBridge - Hands On
 
-
-
-
-
-
+- here cloud watch events 
+![alt text](image-1500.png)
+- here the default bus that is created by default at your account and we can define rules on it 
+![alt text](image-1501.png)
 
 
 
