@@ -2826,5 +2826,22 @@ cat ExampleFileDecrypted.base64 | base64 --decode > ExampleFileDecrypted.txt
 ![alt text](image-1325.png)
 ![alt text](image-1326.png)
 
+### KMS multi region key
+- the idea here that the key is replicated to another regions
+![alt text](image-1327.png)
+- note: it is not recommended to use multi region key execpt at some use cases 
+![alt text](image-1328.png)
+- here if we want to encrypt some attributes 
+![alt text](image-1329.png)
+- same at global tables 
+![alt text](image-1330.png)
+
+### S3 replication with encryption
+- here by default the unecrypted and ecrypted objects are replicated by default
+![alt text](image-1331.png)
+
+### Encrypted AMI sharing process 
+- here the steps. 
+![alt text](image-1332.png)
 
 ## Section 28: Disaster Recovery & Migrations
