@@ -2706,9 +2706,118 @@ def lambda_handler(event, context):
 
 ## Section 24: AWS Monitoring & Audit: CloudWatch, CloudTrail & Config
 
+### CloudWatch Metrics
+- cloud watch provides metrics for wvery service in aws 
+![alt text](image-1428.png)
+- here cloudwatch metric streams 
+![alt text](image-1429.png)
+- here all metrics 
+![alt text](image-1430.png)
+- metric for cpu 
+![alt text](image-1431.png)
+
+### CloudWatch Logs
+- log group , log stream, log exiration policy , send logs to other services 
+![alt text](image-1432.png)
+- cloudwatch logs sources 
+![alt text](image-1433.png)
+- cloud logs insights 
+![alt text](image-1434.png)
+![alt text](image-1435.png)
+- cloudwatch logs s3 export 
+![alt text](image-1436.png)
+- cloudwatch logs supscriptions 
+![alt text](image-1437.png)
+- cloudwatch logs aggregation multo account and multi regions
+![alt text](image-1438.png)
+- cloudwatch logs cross account 
+![alt text](image-1439.png)
+
+### CloudWatch Logs - Hands On
+- here the log groups which created by other services 
+![alt text](image-1440.png)
+- one of them have 6 live streams, (run command id / instance id / stdout or stderr)
+![alt text](image-1441.png)
+- here the logs 
+![alt text](image-1442.png)
+- here to search inside logs 
+![alt text](image-1443.png)
+- here to create metric filters 
+![alt text](image-1444.png)
+- the pattern for example installing 
+![alt text](image-1445.png)
+- select from which log stream and test pattern 
+![alt text](image-1446.png)
+![alt text](image-1447.png)
+![alt text](image-1448.png)
+![alt text](image-1449.png)
+![alt text](image-1450.png)
+![alt text](image-1451.png)
+![alt text](image-1452.png)
+- to create an alarm
+![alt text](image-1453.png)
+- from here to subscription filters
+![alt text](image-1454.png)
+- here to edit retention settig 
+![alt text](image-1455.png)
+- here to export data to s3 
+![alt text](image-1456.png)
+- create log group 
+![alt text](image-1457.png)
+![alt text](image-1458.png)
+- here log insights
+![alt text](image-1459.png)
+
+### CloudWatch Logs - Live Tail - Hands On
+- will create log group 
+![alt text](image-1460.png)
+![alt text](image-1461.png)
+- create a log stream 
+![alt text](image-1462.png)
+![alt text](image-1463.png)
+- click on it 
+![alt text](image-1464.png)
+- start trailing and this is helpfull for debugging 
+![alt text](image-1465.png)
+- if you apply your filter 
+![alt text](image-1466.png)
+- go back to demologstream and from action - create log event 
+![alt text](image-1467.png)
+![alt text](image-1468.png)
+![alt text](image-1469.png)
+- if you go to the live tail it will appear 
+![alt text](image-1470.png)
+
+
+### CloudWatch Agent & CloudWatch Logs Agent
+
+- cloud watch agent should be at the ec2 and it push the logs, make sure that IAM permissions are correct , the agent can be set up also at the onprem servers 
+![alt text](image-1471.png)
+- cloudwatch agent
+  - cloudwatch logs agent: this is the old version and just only send to cloudwatch logs 
+  - cloudwatch unfied agent: this is the newer version and can collet also other metrics
+![alt text](image-1472.png)
+- cloudwatch unified agent metrics 
+![alt text](image-1473.png)
+
+### CloudWatch Alarms
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Section 26: AWS Security & Encryption: KMS, SSM Parameter Store, Shield, WAF
-
 ### encryption 101 
 
 - TLS is the newer version of ssl, date is encrypted before sending it to the server , the examp le here if the client want to login to the server with user and pass so should be incrypted in the client and decrypted in the server 
