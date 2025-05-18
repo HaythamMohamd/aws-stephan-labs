@@ -2921,6 +2921,54 @@ def lambda_handler(event, context):
 ![alt text](image-1530.png)
 - another example 
 ![alt text](image-1531.png)
+
+
+## AWS Config - Overview (not free)
+- used it for auditing and compliance for aws resources
+![alt text](image-1532.png)
+- config rules 
+![alt text](image-1533.png)
+- config resources
+![alt text](image-1534.png)
+- remmediations 
+![alt text](image-1535.png)
+- notififcation 
+![alt text](image-1536.png)
+
+### AWS Config - Hands On(not free)
+
+- go to config service 
+![alt text](image-1537.png)
+![alt text](image-1538.png)
+![alt text](image-1539.png)
+![alt text](image-1540.png)
+![alt text](image-1541.png)
+![alt text](image-1542.png)
+- serched for example at sec groups 
+![alt text](image-1543.png)
+- there is no compliance till now 
+![alt text](image-1544.png)
+- create a rule 
+![alt text](image-1545.png)
+![alt text](image-1547.png)
+![alt text](image-1548.png)
+![alt text](image-1549.png)
+![alt text](image-1550.png)
+- if you go to resources 
+![alt text](image-1551.png)
+- here an exapmle of non compliant 
+![alt text](image-1552.png)
+- he deleted it 
+![alt text](image-1553.png)
+![alt text](image-1554.png)
+- to change remeditation
+![alt text](image-1555.png)
+
+### CloudTrail vs CloudWatch vs Config
+- here defference
+![alt text](image-1556.png)
+![alt text](image-1557.png)
+
 ## Section 26: AWS Security & Encryption: KMS, SSM Parameter Store, Shield, WAF
 ### encryption 101 
 
