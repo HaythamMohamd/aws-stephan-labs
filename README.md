@@ -2801,6 +2801,66 @@ def lambda_handler(event, context):
 ![alt text](image-1473.png)
 
 ### CloudWatch Alarms
+- here cloudwatch alarm
+![alt text](image-1474.png)
+- cloudwatch alarm target 
+![alt text](image-1475.png)
+- composit alarm
+![alt text](image-1476.png)
+- EC2 instance recovery
+![alt text](image-1477.png)
+![alt text](image-1478.png)
+
+###  CloudWatch Alarms Hands On
+- create ec2 
+![alt text](image-1481.png)
+- create alarm
+![alt text](image-1480.png)
+- select a metric 
+![alt text](image-1482.png)
+- with instance id seach
+![alt text](image-1483.png)
+- select cpu metric 
+![alt text](image-1484.png)
+![alt text](image-1485.png)
+- here condition, if more than 95% , 3 times
+![alt text](image-1486.png)
+- here at ec2 action, will terniat the instance if the alarm in alarm status 
+![alt text](image-1487.png)
+![alt text](image-1488.png)
+![alt text](image-1489.png)
+- we should wait about 15 mins ، to do it quickly , so will do it with cloudshell 
+![alt text](image-1490.png)
+![alt text](image-1491.png)
+- here it is in alarm
+![alt text](image-1492.png)
+![alt text](image-1493.png)
+![alt text](image-1494.png)
+
+### Amazon EventBridge 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
