@@ -2814,7 +2814,12 @@ where httpstatus='403';
 ![alt text](image-1597.png)
 
 ### lake formation 
-
+- is a central place to have all your data for analytics
+![alt text](image-1598.png)
+- data comes from alot of sources and ingest into data lake which stpre in s3 and the other services like, athena redshifrt emr and spark working on it 
+ ![alt text](image-1599.png)
+- the big advantage here you can manage the sec from one place on aws data lake 
+![alt text](image-1600.png)
 
 ### managed serveices for apache flink
 
