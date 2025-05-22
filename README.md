@@ -2760,31 +2760,20 @@ where httpstatus='403';
 ![alt text](image-1579.png)
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-### Redshift
-
+### Redshift (Analytics and dataware house )
+- it is based on Postgresql but used at the OLAP not OLTP
+![alt text](image-1580.png)
+- architecture of readshift like k8s - leader and compute node , the query  is go to the leader then sent to the compute node 
+![alt text](image-1581.png)
+- Redshift  ha Multi-az mode for some cluster, for example here if you took a snapshot from origina cluster in a region the copy it to other regio and restore 
+ ![alt text](image-1582.png)
+- here three types of loading data into redshift 
+  - from kinesis data firehouse: the data are come from services to kinesis data firehouse then sent to redshift 
+  - copy data from s3 to redshift using gui or cli
+  - app running on ec2 and send to redshift
+![alt text](image-1583.png)
+- here amazon redshif spectrum: using it to query data which on s3 without loading it in the cluster 
+![alt text](image-1584.png)
 
 ### Opensearch 
 
