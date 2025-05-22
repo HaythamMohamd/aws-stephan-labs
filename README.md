@@ -2796,10 +2796,22 @@ where httpstatus='403';
 ![alt text](image-1590.png)
 
 ### Quicksight 
-
+- it is a service for creating interactive dashboards, in exam you will find quicksight with athena or redshift 
+![alt text](image-1591.png)
+- integration with some services 
+![alt text](image-1592.png)
+![alt text](image-1593.png)
 
 ### Glue 
-
+- it is a serverless service used to extract data from s3 or rds then transform it then load it in redshift 
+![alt text](image-1594.png)
+- another example to convert data to parquet format 
+  - put the data onto s3 then the Glue will import the data from s3 then the parquet will be saved on s3 , then athena will analyza it
+  - or from first s3 will trigger lambda function which trigget Glue
+![alt text](image-1595.png)
+- here gluw data crawler get the data from s3, rds, dynamodb and write the data to glue data catalog 
+![alt text](image-1596.png)
+![alt text](image-1597.png)
 
 ### lake formation 
 
