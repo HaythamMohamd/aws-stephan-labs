@@ -2668,9 +2668,119 @@ def lambda_handler(event, context):
 ![alt text](image-1292.png)
 
 
-## Data & Analytics
+## ection 22: Data & Analytics
 
-### Athena
+### Athena (5$ per TB)
+- this is a serverless service used to analyze data stored in s3 , and usd sql to query the files using the Presto engine
+![alt text](image-1558.png)
+- athena performance improve
+  - columnar data
+  - copress data 
+  - partiion data sets
+![alt text](image-1559.png)
+- athena use lambda which integrate with alot of services and store the results at end at s3 
+![alt text](image-1560.png)
+
+### Athena Hands On (create db then create a table then query data from s3 and save it in another s3 )
+- 01 go to Athena service 
+![alt text](image-1562.png)
+- 02 you should create s3 before to save results on it
+![alt text](image-1561.png)
+- creat s3
+![alt text](image-1563.png)
+![alt text](image-1564.png)
+![alt text](image-1565.png)
+- 03 go back to athena and select the s3 
+![alt text](image-1566.png)
+- so the results of the query should be at this bucket
+![alt text](image-1567.png)
+- 04 he already have another bucket which have more logs 
+![alt text](image-1568.png)
+- 05 he will use these commands 
+```bash
+create database s3_access_logs_db;
+
+CREATE EXTERNAL TABLE IF NOT EXISTS s3_access_logs_db.mybucket_logs(
+         BucketOwner STRING,
+         Bucket STRING,
+         RequestDateTime STRING,
+         RemoteIP STRING,
+         Requester STRING,
+         RequestID STRING,
+         Operation STRING,
+         Key STRING,
+         RequestURI_operation STRING,
+         RequestURI_key STRING,
+         RequestURI_httpProtoversion STRING,
+         HTTPstatus STRING,
+         ErrorCode STRING,
+         BytesSent BIGINT,
+         ObjectSize BIGINT,
+         TotalTime STRING,
+         TurnAroundTime STRING,
+         Referrer STRING,
+         UserAgent STRING,
+         VersionId STRING,
+         HostId STRING,
+         SigV STRING,
+         CipherSuite STRING,
+         AuthType STRING,
+         EndPoint STRING,
+         TLSVersion STRING
+) 
+ROW FORMAT SERDE 'org.apache.hadoop.hive.serde2.RegexSerDe'
+WITH SERDEPROPERTIES (
+         'serialization.format' = '1', 'input.regex' = '([^ ]*) ([^ ]*) \\[(.*?)\\] ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) \\\"([^ ]*) ([^ ]*) (- |[^ ]*)\\\" (-|[0-9]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) (\"[^\"]*\") ([^ ]*)(?: ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*) ([^ ]*))?.*$' )
+LOCATION 's3://target-bucket-name/prefix/';
+
+
+SELECT requesturi_operation, httpstatus, count(*) FROM "s3_access_logs_db"."mybucket_logs" 
+GROUP BY requesturi_operation, httpstatus;
+
+SELECT * FROM "s3_access_logs_db"."mybucket_logs"
+where httpstatus='403';
+```
+- 06 create db 
+![alt text](image-1570.png)
+- 07 create a table on db 
+![alt text](image-1571.png)
+- FYI he got the command from documentation 
+![alt text](image-1572.png)
+![alt text](image-1573.png)
+- here the table which is created and we can preview it 
+![alt text](image-1574.png)
+- select data from table 
+![alt text](image-1575.png)
+- results
+![alt text](image-1576.png)
+- another complex query
+![alt text](image-1577.png)
+![alt text](image-1578.png)
+- another query to get unauthorized access 
+![alt text](image-1579.png)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 ### Redshift
