@@ -3455,3 +3455,127 @@ def lambda_handler(event, context):
 ![alt text](image-1426.png)
 ![alt text](image-1427.png)
 ## Section 28: Disaster Recovery & Migrations
+
+
+## CloudFormation (Infra as code )
+
+- here what is cloudformation
+![alt text](image-1611.png)
+- benefits of cloudformatin
+![alt text](image-1612.png)
+![alt text](image-1613.png)
+- visualize 
+![alt text](image-1614.png)
+
+## CloudFormation lab
+
+- 01 create a stack 
+![alt text](image-1615.png)
+- 02 from a template uplaod this file , this will create an ec2 
+```bash
+---
+Resources:
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      AvailabilityZone: us-east-1a
+      ImageId: ami-0453ec754f44f9a4a
+      InstanceType: t2.micro
+
+```
+![alt text](image-1616.png)
+- you can view it from app composer 
+![alt text](image-1618.png)
+![alt text](image-1617.png)
+- 03 put the stack name 
+![alt text](image-1619.png)
+- 04 put a tag
+![alt text](image-1620.png)
+![alt text](image-1621.png)
+- from here you can see the events
+![alt text](image-1622.png)
+- here you can see the resource 
+![alt text](image-1624.png)
+- here the template you uploaded
+![alt text](image-1623.png)
+- at the ec2 you find the created one by cloudformation
+![alt text](image-1625.png)
+- here at the tag you will find the tag that we put and also some tags the cloudformation put 
+![alt text](image-1626.png)
+- 05 you will update this stack
+![alt text](image-1627.png)
+- replace with this file
+```bash
+---
+Parameters:
+  SecurityGroupDescription:
+    Description: Security Group Description
+    Type: String
+
+Resources:
+  MyInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      AvailabilityZone: us-east-1a
+      ImageId: ami-0453ec754f44f9a4a
+      InstanceType: t2.micro
+      SecurityGroups:
+        - !Ref SSHSecurityGroup
+        - !Ref ServerSecurityGroup
+
+  # an elastic IP for our instance
+  MyEIP:
+    Type: AWS::EC2::EIP
+    Properties:
+      InstanceId: !Ref MyInstance
+
+  # our EC2 security group
+  SSHSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Enable SSH access via port 22
+      SecurityGroupIngress:
+        - CidrIp: 0.0.0.0/0
+          FromPort: 22
+          IpProtocol: tcp
+          ToPort: 22
+
+  # our second EC2 security group
+  ServerSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: !Ref SecurityGroupDescription
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 192.168.1.1/32
+
+Outputs:
+  ElasticIP:
+    Description: Elastic IP Value
+    Value: !Ref MyEIP
+
+```
+![alt text](image-1628.png)
+- 06 put the parameter of sec group description 
+![alt text](image-1629.png)
+- here at the change set , what will be change by the cloudformation
+![alt text](image-1630.png)
+- these are the events 
+![alt text](image-1631.png)
+- this the created ec2
+![alt text](image-1635.png)
+- here the created elastic ip 
+![alt text](image-1633.png)
+- here all resources
+![alt text](image-1634.png)
+- from template then view in composer
+![alt text](image-1636.png)
+![alt text](image-1637.png)
+- FYI: delete from the cloudformation not the console 
+![alt text](image-1638.png)
