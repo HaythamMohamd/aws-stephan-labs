@@ -2775,9 +2775,15 @@ where httpstatus='403';
 - here amazon redshif spectrum: using it to query data which on s3 without loading it in the cluster 
 ![alt text](image-1584.png)
 
-### Opensearch 
-
-
+### Opensearch - elastic search
+- here the name become elastic search 
+![alt text](image-1585.png)
+- here if you made CRUD on dynamodb then dynamodb stream will call lambda func which call amazon open search and we can find from app on ec2 for example item id and retrieve it from dynamodb table
+![alt text](image-1586.png)
+- open saerch with cloud watch logs 
+![alt text](image-1587.png)
+- open search patterns 
+![alt text](image-1588.png)
 ### EMR 
 
 
