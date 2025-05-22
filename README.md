@@ -2784,9 +2784,16 @@ where httpstatus='403';
 ![alt text](image-1587.png)
 - open search patterns 
 ![alt text](image-1588.png)
-### EMR 
 
+### EMR (Elastic MapReduce) - Help for Hadoop Cluster(Big data)
 
+- Help for Hadoop Cluster(Big data)
+![alt text](image-1589.png)
+- nodes types and purchasing 
+  - master node
+  - core node
+  - task node 
+![alt text](image-1590.png)
 
 ### Quicksight 
 
