@@ -2822,14 +2822,26 @@ where httpstatus='403';
 ![alt text](image-1600.png)
 
 ### managed serveices for apache flink
+- Flink is a framework for processing data streams , here managed flink is reading dat from kinesis data streas and amazon msk 
+![alt text](image-1601.png)
 
+### managed serveices for apache flink lab
+- here 
+![alt text](image-1602.png)
+![alt text](image-1603.png)
 
-### MSK  
-
-
+### MSK - Managed Streaming for Apache Kafka  
+- this is alternative to amazon kinesis, both of them for stream data 
+![alt text](image-1604.png)
+![alt text](image-1605.png)
+![alt text](image-1606.png)
+![alt text](image-1607.png)
 ### Bigdata ingestion pipeline 
-
-
+- like cicd but for big data , here what we want to do 
+![alt text](image-1608.png)
+- here all the integrated services 
+![alt text](image-1609.png)
+![alt text](image-1610.png)
 ## Machine Learning 
 
 
