@@ -3579,3 +3579,23 @@ Outputs:
 ![alt text](image-1637.png)
 - FYI: delete from the cloudformation not the console 
 ![alt text](image-1638.png)
+
+### CloudFormation - Service Role
+
+- here means that you should as a user to have the rigt permission, then IAM role to cloudformation to to can creat/delete/update 
+![alt text](image-1639.png)
+- from IAM => roles => create role
+![alt text](image-1640.png)
+- choose aws service, cloudformation
+![alt text](image-1641.png)
+- for exaple give it full access for s3  
+![alt text](image-1642.png)
+- put a name
+![alt text](image-1643.png)
+![alt text](image-1644.png)
+- go to cloudformation and create a stack 
+![alt text](image-1645.png)
+![alt text](image-1646.png)
+![alt text](image-1647.png)
+- here if you don't choose IAM role it will take your own permission as a user, so will choose the role that we created, so this role will be used in all stack operation 
+![alt text](image-1648.png)
