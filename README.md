@@ -3599,3 +3599,7 @@ Outputs:
 ![alt text](image-1647.png)
 - here if you don't choose IAM role it will take your own permission as a user, so will choose the role that we created, so this role will be used in all stack operation 
 ![alt text](image-1648.png)
+
+## Terrafrom
+
+- here the link of the other repo `https://github.com/HaythamMohamd/nana-terraform-haytham.git`
